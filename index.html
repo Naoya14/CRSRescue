@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/1ba7b41d28.js" crossorigin="anonymous"></script>
+
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- style sheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <title>Welcome to BookDoc</title>
+
+</head>
+
+<body class="naoya">
+  <nav class="navbar bg-light">
+    <h1>
+      <a href="index.html">
+        <i class="fas fa-book-medical"></i> BookDoc
+      </a>
+    </h1>
+    <ul>
+      <li><a href="aboutus.html">About us</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+  <section class="landing">
+    <div class="dark-over">
+      <div class="landing-inner">
+        <h1 class="x-large">BookDoc</h1>
+        <p class="lead">Our mission is making people more healther and create happy life</p>
+        <div class="buttons">
+          <a href="register.html" class="btn btn-red">Sign Up</a>
+          <a href="login.html" class="btn btn-light">login</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="introduction">
+    <div class="header">
+      <h1 class="large">What is BookDoc?</h1>
+    </div>
+    <div class="skill1">
+      <img src="img/footprint.png" alt="footprint">
+      <h2 class="title">BookDoc Activ</h2>
+      <p>A Wide Array Of Activ Reward Partners
+        In less than one year, BookDoc has built a network of over 35 rewards partners in over 11 countries
+        committed to healthy lifestyle choices, with more on the way.
+      </p>
+    </div>
+    <div class="skill2">
+      <img src="img/booking.png" alt="footprint">
+      <h2 class="title"><a class="book-link" href="booking.html">BookDoc Search & Book</a></h2>
+      <p>Hassle-free integrated online eco-system for finding and booking healthcare professionals.
+        Our highly trained and professional team of medical experts
+        are always ready to lend a helping hand.
+      </p>
+    </div>
+    <div class="skill3">
+      <img src="img/market.png" alt="market">
+      <h2 class="title"> <a class="market-link" href="marketplace.html">BookDoc Marketplace</a></h2>
+      <p>Marketplace Benefits
+        Consolidated platform for healthcare providers, wellness, and fitness offerings
+        Marketplace users get the best value with BookDoc's prenegotiated rates
+        Regional network of partners</p>
+    </div>
+  </section>
+  <hr>
+  <section class="contact-naoya">
+    <h2 class="text-contact">Get In Touch</h2>
+    <h3 class="text-contact">If you have any questions, please don't hesitate and contact us.</h3>
+    <a class="btn btn-red" href="contactus.html">CONTACT US</a>
+  </section>
+  <section class="footer">
+    <p class="copyright">&copy; <span class="copyright-year"></span> BookDoc</p>
+  </section>
+  <script>
+    var date = new Date();
+    $(".copyright-year").text(date.getFullYear());
+  </script>
+</body>
+
+</html>
