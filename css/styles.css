@@ -141,7 +141,7 @@ hr {
 
 /* main */
 .introduction {
-  margin: 5%;
+  margin: 10%;
   display: grid;
   grid-template-areas:
     'header header'
@@ -161,40 +161,27 @@ hr {
   margin-bottom: 2rem;
 }
 
-.skill1 {
-  grid-area: skill1;
+.vision {
+  grid-area: vision;
   text-align: center;
   justify-content: center;
   padding: 0.5rem;
 }
 
-.skill1 img {
+.vision img {
   width: 100px;
   margin-bottom: 1rem;
   margin-bottom: 3rem;
 }
 
-.skill2 {
-  grid-area: skill2;
+.mission {
+  grid-area: mission;
   text-align: center;
   justify-content: center;
   padding: 0.5rem;
 }
 
-.skill2 img {
-  width: 100px;
-  margin-bottom: 1rem;
-  margin-bottom: 3rem;
-}
-
-.skill3 {
-  grid-area: skill3;
-  text-align: center;
-  justify-content: center;
-  padding: 0.5rem;
-}
-
-.skill3 img {
+.mission img {
   width: 100px;
   margin-bottom: 1rem;
   margin-bottom: 3rem;
