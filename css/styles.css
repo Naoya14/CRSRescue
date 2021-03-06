@@ -144,8 +144,8 @@ hr {
   margin: 5%;
   display: grid;
   grid-template-areas:
-    'header header header'
-    'skill1 skill2 skill3';
+    'header header'
+    'vision mission';
   grid-gap: 1rem;
 }
 
