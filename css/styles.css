@@ -107,3 +107,8 @@
   font-size: 0.8rem;
   color: #eaf6f6;
 }
+
+/* margin */
+.margin-top {
+  margin-top: 7rem;
+}
