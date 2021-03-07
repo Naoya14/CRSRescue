@@ -29,7 +29,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top opacity-2">
 
       <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
           <i class="fas fa-hands-helping"></i> CRS
         </a>
 
