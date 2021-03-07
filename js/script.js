@@ -1,6 +1,6 @@
 function signupcheck() {
-  var username = document.loginForm.username.value;
-  var password = document.loginForm.password.value;
+  var username = document.signup.username.value;
+  var password = document.signup.password.value;
 
   if (username == null || username == '') {
     alert("userName can't be blank");
