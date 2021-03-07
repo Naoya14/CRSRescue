@@ -40,12 +40,9 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="navbar">
 
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="volunteerLogin.html">VolunteerLogin</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="staffLogin.html">StaffLogin</a>
+              <a class="nav-link" href="index.php">Signout</a>
             </li>
           </ul>
 
