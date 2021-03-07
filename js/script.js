@@ -35,3 +35,18 @@ function recordstaffcheck() {
     return document.recordstaff.submit();
   }
 }
+
+function loginCheck() {
+  var username = document.volunteerLogin.username.value;
+  var password = document.volunteerLogin.password.value;
+
+  if (username == null || username == '') {
+    alert("userName can't be blank");
+    return;
+  } else if (password.length < 6) {
+    alert('Password must be at least 6 characters long');
+    return;
+  } else {
+    return document.volunteerLogin.submit();
+  }
+}

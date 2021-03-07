@@ -56,24 +56,8 @@
 
   <section>
     <div class="container margin-top">
-      <h2>Volunteer Login</h2>
+      <h2>Volunteer Menu</h2>
 
-      <form method="post" class="form" name="volunteerLogin" action="volunteerLoginCheck.php">
-        <div class="form-group mt-3">
-          <label for="username">Username</label>
-          <input type="text" name="username" class="form-control" id="username" aria-describedby="username"
-            placeholder="Enter username">
-        </div>
-
-        <div class="form-group mt-3">
-          <label for="password">Password</label>
-          <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
-        </div>
-
-        <input type="button" value="Volunteer Login" class="btn btn-danger mt-4 mb-3" onClick="loginCheck()"></input>
-      </form>
-      <p>If you don't sign up yet, please click <a href="signup.html">here</a></p>
-    </div>
   </section>
 
 
@@ -86,7 +70,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
-  <script type="text/javascript" src="js/script.js"></script>
 
 </body>
 

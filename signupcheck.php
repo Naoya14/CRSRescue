@@ -30,7 +30,6 @@ $result = mysqli_query($con,$query);
   else {
     echo "<script>alert('sign up failed');</script>";
   }
-
 }
 
 // Close DB connection
