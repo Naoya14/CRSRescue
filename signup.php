@@ -89,9 +89,16 @@
         </div>
 
         <div class="form-group mt-3">
-          <label for="gender">Gender</label>
-          <input type="text" name="gender" class="form-control" id="gender" aria-describedby="gender"
-            placeholder="Enter gender">
+          <label for="Gender">Gender</label>
+          <br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male">
+            <label class="form-check-label" for="inlineRadio1">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female">
+            <label class="form-check-label" for="inlineRadio2">Female</label>
+          </div>
         </div>
         <input type="button" value="signup" class="btn btn-danger mt-4" onClick="signupcheck()"></input>
 
