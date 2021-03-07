@@ -31,6 +31,7 @@
       <div class="container">
         <a class="navbar-brand" href="index.php">
           <i class="fas fa-hands-helping"></i> CRS
+          <a class="nav-link" href="">Record Staff</a>
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
@@ -53,7 +54,7 @@
 
   <section>
     <div class="container margin-top">
-      <h2>Sign up</h2>
+      <h2>Record CRS Rescue Staff</h2>
 
       <form method="post" class="form" name="recordstaff" action="recordstaff_check.php">
         <div class="form-group mt-3">
