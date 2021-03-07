@@ -93,7 +93,7 @@
           <input type="text" name="gender" class="form-control" id="gender" aria-describedby="gender"
             placeholder="Enter gender">
         </div>
-        <input type="button" value="signup" class="btn btn-danger mt-4"></input>
+        <input type="button" value="signup" class="btn btn-danger mt-4" onClick="signupcheck()"></input>
 
       </form>
     </div>
@@ -109,6 +109,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/script.js"></script>
 
 </body>
 
