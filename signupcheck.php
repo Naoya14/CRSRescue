@@ -4,9 +4,8 @@
   $password =  $_POST['password'];
   $name = $_POST['name'];
   $phone = $_POST['phone'];
-  $conntry = $_POST['country'];
+  $country = $_POST['country'];
   $gender = $_POST['gender'];
-
 
 // 1. DB Server connection
   $con = mysqli_connect('localhost', 'root', '', 'crsrescue_db');
@@ -22,7 +21,7 @@ $result = mysqli_query($con,$query);
 
 }else{
   // Insert the values into database table users
-  $sqlQuery = "INSERT INTO tb_volunteers VALUES ( '$username', '$password','$name','$phone', '$gender', '$country')";
+  $sqlQuery = "INSERT INTO tb_volunteers VALUES ('$username', '$password', '$name', '$phone', '$gender', '$country')";
 
   // Execute the query
   if ($con->query($sqlQuery) == TRUE ) {
