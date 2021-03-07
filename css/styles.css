@@ -79,7 +79,7 @@ hr {
 }
 
 /* navbar */
-.navbar {
+.navbar-crs {
   display: flex;
   background-color: #333;
   align-items: center;
@@ -96,17 +96,17 @@ hr {
   line-height: 1.6;
 }
 
-.navbar ul {
+.navbar-crs ul {
   display: flex;
 }
 
-.navbar a {
+.navbar-crs a {
   color: #fff;
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
 
-.navbar a:hover {
+.navbar-crs a:hover {
   color: #fa1616;
 }
 
@@ -204,7 +204,7 @@ hr {
 }
 
 /* contact */
-.contact-naoya {
+.contact-crs {
   margin: 5%;
   text-align: center;
   justify-content: center;
