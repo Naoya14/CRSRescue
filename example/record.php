@@ -3,22 +3,22 @@
 
         if(!isset($_SESSION['username']))
          {
-             header("Location:loginmanager.php");
+             header("Location:recordStaff.php");
          }
 
-          echo "<b>Welcome to Meha Hospital Manager</b> " . $_SESSION['username'];
+          echo "<b>Welcome to CRS Rescue Manager</b> " . $_SESSION['username'];
 
-          echo "<br>Click <a style='color:red;' href='logoutmanager.php'> Logout Manager</a> to logout";
+          echo "<br>Click <a style='color:red;' href='logout.php'> Logout Manager</a> to logout";
   ?>
 <?php
 
-            $conn = mysqli_connect("localhost", "root","","mehahospital");
+            $conn = mysqli_connect("localhost", "root","","crsrescue_db");
 
             //check connection
             if ($conn->connect_error)
             {die("Connection Failed: ". $conn->connect_error);}
 
-            $sql = "SELECT testerID, testerusername, testerpassword, testername, testcentre FROM recordtester";
+            $sql = "SELECT username, password, name, phone, position, dateJoin FROM tb_staffs";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -26,11 +26,12 @@
             while($row = $result->fetch_assoc()) {
             echo "<tbody>
             <tr>
-            <td>" . $row["testerID"]. "</td>
-            <td>" . $row["testerusername"] . "</td>
-            <td>" . $row["testerpassword"]. "</td>
-            <td>" . $row["testername"]. "</td>
-            <td>" . $row["testcentre"]. "</td>
+            <td>" . $row["username"]. "</td>
+            <td>" . $row["password"] . "</td>
+            <td>" . $row["name"]. "</td>
+            <td>" . $row["phone"]. "</td>
+            <td>" . $row["position"]. "</td>
+            <td>" . $row["dateJoin"]. "</td>
             </tr>
             </tbody>";
             }
