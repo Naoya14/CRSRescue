@@ -42,10 +42,10 @@
 
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="volunteerLogin.html">VolunteerLogin</a>
+              <a class="nav-link" href="volunteerLogin.php">VolunteerLogin</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="staffLogin.html">StaffLogin</a>
+              <a class="nav-link" href="staffLogin.php">StaffLogin</a>
             </li>
           </ul>
 
