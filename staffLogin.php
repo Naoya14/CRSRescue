@@ -42,10 +42,10 @@
 
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="volunteerLogin.html">VolunteerLogin</a>
+              <a class="nav-link" href="volunteerLogin.php">VolunteerLogin</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="staffLogin.html">StaffLogin</a>
+              <a class="nav-link" href="staffLogin.php">StaffLogin</a>
             </li>
           </ul>
 
@@ -70,7 +70,7 @@
           <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
         </div>
 
-        <input type="button" href="recordstaff.php" value="Staff Login" class="btn btn-primary mt-4"></input>
+        <input type="button" onClick = "location.href = 'recordstaff.php'"  value="Staff Login" class="btn btn-primary mt-4"></input>
       </form>
     </div>
   </section>
