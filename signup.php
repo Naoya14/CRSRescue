@@ -1,46 +1,41 @@
 <?php
 
-if(isset($_POST[&#39;login&#39;])){
-  // form handling
-  $username = $_POST[&#39;usernametype&#39;];
-  $password =  $_POST[&#39;passwordtype&#39;];
-  $email = $_POST[&#39;emailtype&#39;];
-  $fullname = $_POST[&#39;fullnametype&#39;];
-  $usertypes = $_POST[&#39;usertype&#39;];
-
-
+if(isset($_POST['login'])){
+  // form handling
+  $username = $_POST['usernametype'];
+  $password =  $_POST['passwordtype'];
+  $email = $_POST['emailtype'];
+  $fullname = $_POST['fullnametype'];
+  $usertypes = $_POST['usertype'];
 }
 
 // 1. DB Server connection
-  $con = mysqli_connect(&#39;localhost&#39;, &#39;root&#39;, &#39;&#39;, &#39;mehahospital&#39;);
+  $con = mysqli_connect('localhost', 'root', '', 'mehahospital');
 // check the connection
-if($con-&gt;connect_error)
-    die(&quot; DB Connection failed &quot; . $con-&gt;connect_error);
+if($con->connect_error)
+    die(" DB Connection failed " . $con->connect_error);
 
 //Check existing user
-$query =&quot;SELECT * FROM signupuser WHERE username=&#39;$username&#39;;&quot;;
+$query ="SELECT * FROM signupuser WHERE username='$username';";
 $result = mysqli_query($con,$query);
- if(mysqli_num_rows($result)&gt;0){
-     echo &#39;&lt;script&gt;alert(&quot;Userename already exist.&quot;);window.location = &quot;index.php&quot;;&lt;/script&gt;&#39;;
+ if(mysqli_num_rows($result)>0){
+     echo '<script>alert("Userename already exist.");window.location = "index.php";</script>';
 
 }else{
-  // Insert the values into database table users
-  $sqlQuery = &quot;INSERT INTO signupuser VALUES ( &#39;$username&#39;,
-&#39;$password&#39;,&#39;$email&#39;,&#39;$fullname&#39;, &#39;$usertypes&#39;)&quot;;
+  // Insert the values into database table users
+  $sqlQuery = "INSERT INTO signupuser VALUES ( '$username', '$password','$email','$fullname', '$usertypes')";
 
-  // Execute the query
-  if ($con-&gt;query($sqlQuery) == TRUE ) {
-    echo &#39;&lt;script&gt;alert(&quot;Sign up successful&quot;);window.location = &quot;index.php&quot;;&lt;/script&gt;&#39;;
-  }
-  else {
-    echo &quot;&lt;script&gt;alert(&#39;sign up failed&#39;);&lt;/script&gt;&quot;;
-  }
-
-19
+  // Execute the query
+  if ($con->query($sqlQuery) == TRUE ) {
+    echo '<script>alert("Sign up successful");window.location = "index.php";</script>';
+  }
+  else {
+    echo "<script>alert('sign up failed');</script>";
+  }
 
 }
 
 // Close DB connection
-$con-&gt;close();
+$con->close();
 
-?&gt;
+?>
