@@ -87,11 +87,11 @@
           <label for="position">Position</label>
           <br>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="role" id="inlineRadio1" value="Manager">
+            <input class="form-check-input" type="radio" name="position" id="inlineRadio1" value="Manager">
             <label class="form-check-label" for="inlineRadio1">Manager</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="role" id="inlineRadio2" value="Staff">
+            <input class="form-check-input" type="radio" name="position" id="inlineRadio2" value="Staff">
             <label class="form-check-label" for="inlineRadio2">Staff</label>
           </div>
         </div>
