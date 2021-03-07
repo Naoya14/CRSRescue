@@ -1,50 +1,42 @@
-&lt;?php
+<?php
+    session_start();
 
-32
+        if(!isset($_SESSION['username']))
+         {
+             header("Location:loginmanager.php");
+         }
 
-    session_start();
+          echo "<b>Welcome to Meha Hospital Manager</b> " . $_SESSION['username'];
 
-        if(!isset($_SESSION[&#39;username&#39;]))
-         {
-             header(&quot;Location:loginmanager.php&quot;);
-         }
+          echo "<br>Click <a style='color:red;' href='logoutmanager.php'> Logout Manager</a> to logout";
+  ?>
+<?php
 
-          echo &quot;&lt;b&gt;Welcome to Meha Hospital Manager&lt;/b&gt; &quot; . $_SESSION[&#39;username&#39;];
+            $conn = mysqli_connect("localhost", "root","","mehahospital");
 
-          echo &quot;&lt;br&gt;Click &lt;a style=&#39;color:red;&#39; href=&#39;logoutmanager.php&#39;&gt; Logout Manager&lt;/a&gt;
-to logout&quot;;
-  ?&gt;
-&lt;?php
+            //check connection
+            if ($conn->connect_error)
+            {die("Connection Failed: ". $conn->connect_error);}
 
-            $conn = mysqli_connect(&quot;localhost&quot;, &quot;root&quot;,&quot;&quot;,&quot;mehahospital&quot;);
+            $sql = "SELECT testerID, testerusername, testerpassword, testername, testcentre FROM recordtester";
+            $result = $conn->query($sql);
 
-            //check connection
-            if ($conn-&gt;connect_error)
-            {die(&quot;Connection Failed: &quot;. $conn-&gt;connect_error);}
+            if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+            echo "<tbody>
+            <tr>
+            <td>" . $row["testerID"]. "</td>
+            <td>" . $row["testerusername"] . "</td>
+            <td>" . $row["testerpassword"]. "</td>
+            <td>" . $row["testername"]. "</td>
+            <td>" . $row["testcentre"]. "</td>
+            </tr>
+            </tbody>";
+            }
 
-            $sql = &quot;SELECT testerID, testerusername, testerpassword, testername, testcentre
-FROM recordtester&quot;;
-            $result = $conn-&gt;query($sql);
+            echo "</table>";
+            } else { echo "0 results"; }
+            $conn->close();
 
-            if ($result-&gt;num_rows &gt; 0) {
-            // output data of each row
-            while($row = $result-&gt;fetch_assoc()) {
-            echo &quot;&lt;tbody&gt;
-
-33
-
-            &lt;tr&gt;
-            &lt;td&gt;&quot; . $row[&quot;testerID&quot;]. &quot;&lt;/td&gt;
-            &lt;td&gt;&quot; . $row[&quot;testerusername&quot;] . &quot;&lt;/td&gt;
-            &lt;td&gt;&quot; . $row[&quot;testerpassword&quot;]. &quot;&lt;/td&gt;
-            &lt;td&gt;&quot; . $row[&quot;testername&quot;]. &quot;&lt;/td&gt;
-            &lt;td&gt;&quot; . $row[&quot;testcentre&quot;]. &quot;&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;/tbody&gt;&quot;;
-            }
-
-            echo &quot;&lt;/table&gt;&quot;;
-            } else { echo &quot;0 results&quot;; }
-            $conn-&gt;close();
-
-            ?&gt;
+            ?>
