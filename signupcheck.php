@@ -17,7 +17,7 @@ if($con->connect_error)
     die(" DB Connection failed " . $con->connect_error);
 
 //Check existing user
-$query ="SELECT * FROM tb_volunteers WHERE username='$username';";
+$query ="SELECT * FROM tb_volunteers WHERE username ='$username';";
 $result = mysqli_query($con,$query);
  if(mysqli_num_rows($result)>0){
      echo '<script>alert("Userename already exist.");window.location = "signup.php";</script>';
