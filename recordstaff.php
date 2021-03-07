@@ -39,7 +39,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbar">
-         <ul>
+         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="recordstaff.php">Record Staff</a>
           </li>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="collapse navbar-collapse justify-content-end" id="navbar">
-          <ul>
+          <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="index.php">Signout</a>
             </li>
