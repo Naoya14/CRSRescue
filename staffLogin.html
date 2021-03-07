@@ -26,7 +26,7 @@
 
 <body class="crs">
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top opacity-2">
 
       <div class="container">
         <a class="navbar-brand" href="index.html">
@@ -52,62 +52,29 @@
         </div>
       </div>
     </nav>
-
   </header>
 
-  <section class="landing">
-    <div class="dark-over">
-      <div class="landing-inner">
-        <h1 class="x-large">CRS-Rescue</h1>
-        <p class="lead">Our mission is help the people who get affected communities natural disaster </p>
-        <div>
-          <a href="signup.html" class="btn btn-large btn-danger  ">Sign Up</a>
+  <section>
+    <div class="container margin-top">
+      <h2>Staff Login</h2>
+
+      <form method="post" class="form" name="staffLoginForm" action="staff_check.php">
+        <div class="form-group mt-3">
+          <label for="username">Username</label>
+          <input type="text" name="username" class="form-control" id="username" aria-describedby="username"
+            placeholder="Enter username">
         </div>
-      </div>
+
+        <div class="form-group mt-3">
+          <label for="password">Password</label>
+          <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
+        </div>
+
+        <input type="button" value="Staff Login" class="btn btn-primary mt-4"></input>
+      </form>
     </div>
   </section>
 
-  <section class="introduction">
-    <div class="header">
-      <h1 class="large">What is CRS Rescue?</h1>
-      <p>
-        Our motto is to try and stay passionate, we will try to solve the challenges that exist
-        in terms of real help for people who need support and provide our volunteers with real experience.
-      </p>
-    </div>
-
-    <div class="vision">
-      <img src="img/vision.png" alt="vision">
-      <h2 class="title">Vision</h2>
-      <p>A community that is directly involved in helping and providing good service
-      </p>
-    </div>
-    <div class="mission">
-      <img src="img/mission.png" alt="mission">
-      <h2 class="title">Mission</a></h2>
-      <p>
-        We advance this voluntary institution
-        by strengthening leadership, cohesiveness, the latest innovations and empowering individuals as volunteers.
-      </p>
-    </div>
-
-  </section>
-
-  <section class="contact-crs">
-    <h2 class="text-contact">Get In Touch</h2>
-    <h3 class="text-contact">If you have any questions, please don't hesitate and contact us.</h3>
-    <a class="btn btn-danger" href="#">CONTACT US</a>
-  </section>
-
-  <section class="footer">
-    <p class="copyright">&copy; <span class="copyright-year"></span> CRS</p>
-  </section>
-
-
-  <script>
-    var date = new Date();
-    $(".copyright-year").text(date.getFullYear());
-  </script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -118,6 +85,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
     integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
     crossorigin="anonymous"></script>
+
 </body>
 
 </html>
