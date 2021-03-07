@@ -9,6 +9,6 @@ function signupcheck() {
     alert('Password must be at least 6 characters long');
     return;
   } else {
-    return document.loginForm.submit();
+    return document.signup.submit();
   }
 }

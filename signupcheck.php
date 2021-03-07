@@ -20,7 +20,7 @@ if($con->connect_error)
 $query ="SELECT * FROM tb_volunteers WHERE username='$username';";
 $result = mysqli_query($con,$query);
  if(mysqli_num_rows($result)>0){
-     echo '<script>alert("Userename already exist.");window.location = "signup.html";</script>';
+     echo '<script>alert("Userename already exist.");window.location = "signup.php";</script>';
 
 }else{
   // Insert the values into database table users
@@ -28,7 +28,7 @@ $result = mysqli_query($con,$query);
 
   // Execute the query
   if ($con->query($sqlQuery) == TRUE ) {
-    echo '<script>alert("Sign up successful");window.location = "index.html";</script>';
+    echo '<script>alert("Sign up successful");window.location = "index.php";</script>';
   }
   else {
     echo "<script>alert('sign up failed');</script>";
