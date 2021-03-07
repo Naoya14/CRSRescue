@@ -95,7 +95,7 @@
             <label class="form-check-label" for="inlineRadio2">Staff</label>
           </div>
         </div>
-        <input type="button" value="record" class="btn btn-danger mt-4"></input>
+        <input type="button" value="record" class="btn btn-danger mt-4" onClick="recordstaffcheck()"></input>
         <input type="button" value="show list of staff" class="btn btn-danger mt-4"></input>
 
       </form>
