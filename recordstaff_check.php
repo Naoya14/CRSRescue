@@ -22,7 +22,7 @@ $result = mysqli_query($con,$query);
 
 }else{
   // Insert the values into database table users
-  $sqlQuery = "INSERT INTO tb_staffs VALUES ( '$username', '$password','$name','$phone', '$postion', '$dateJoin')";
+  $sqlQuery = "INSERT INTO tb_staffs VALUES ( '$username', '$password','$name','$phone', '$position', '$dateJoin')";
 
   // Execute the query
   if ($con->query($sqlQuery) == TRUE ) {
