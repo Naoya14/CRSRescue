@@ -1,13 +1,13 @@
 <?php
 
-  $conn = mysqli_connect("localhost", "root", "", "mehahospital");
+  $conn = mysqli_connect("localhost", "root", "", "crsrescue_db");
 
   // insert
   if (isset($_POST['login'])) {
-    $testerusername = $_POST['testerusername'];
+    $testerusername = $_POST['username'];
     $testerpass = $_POST['password'];
-    $testername = $_POST['testername'];
-    $testcentre = $_POST['testcentre'];
+    $testername = $_POST['name'];
+    $testcentre = $_POST['phone'];
 
     //generate MaterialID
     $SQLlast = "SELECT testerID from recordtester order by testerID desc limit 1;";
