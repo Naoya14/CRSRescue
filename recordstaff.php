@@ -31,7 +31,6 @@
       <div class="container">
         <a class="navbar-brand" href="index.php">
           <i class="fas fa-hands-helping"></i> CRS
-          <a class="nav-link" href="">Record Staff</a>
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar"
@@ -39,9 +38,16 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbar">
+        <div class="collapse navbar-collapse" id="navbar">
+         <ul>
+          <li class="nav-item">
+            <a class="nav-link" href="recordstaff.php">Record Staff</a>
+          </li>
+         </ul>
+        </div>
 
-            </li>
+        <div class="collapse navbar-collapse justify-content-end" id="navbar">
+          <ul>
             <li class="nav-item">
               <a class="nav-link" href="index.php">Signout</a>
             </li>
@@ -94,8 +100,6 @@
         </div>
         </div>
         <input type="button" value="record" class="btn btn-danger mt-4" onClick="recordstaffcheck()"></input>
-        <input type="button" value="show list of staff" class="btn btn-danger mt-4"></input>
-
       </form>
     </div>
   </section>
