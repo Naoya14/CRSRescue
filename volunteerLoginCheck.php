@@ -18,7 +18,7 @@ $result = mysqli_query($con,$query);
 
 }else{
   // Insert the values into database table users
-  echo "<script>alert('Username or password doesn't match');</script>";
+  echo '<script>alert("Username or password does not match");window.location = "index.php";</script>';
 }
 
 // Close DB connection
