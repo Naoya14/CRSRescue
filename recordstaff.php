@@ -79,11 +79,6 @@
             placeholder="Enter phone number">
         </div>
         <div class="form-group mt-3">
-          <label for="date Join">Date Join</label>
-          <input type="text" name="dateJoin" class="form-control" id="dateJoin" aria-describedby="dateJoin"
-            placeholder="Enter Date Join">
-        </div>
-        <div class="form-group mt-3">
           <label for="position">Position</label>
           <br>
           <div class="form-check form-check-inline">
@@ -94,6 +89,11 @@
             <input class="form-check-input" type="radio" name="position" id="inlineRadio2" value="Staff">
             <label class="form-check-label" for="inlineRadio2">Staff</label>
           </div>
+          <div class="form-group mt-3">
+          <label for="date Join">Date Join</label>
+          <input type="text" name="dateJoin" class="form-control" id="dateJoin" aria-describedby="dateJoin"
+            placeholder="Enter Date Join">
+        </div>
         </div>
         <input type="button" value="record" class="btn btn-danger mt-4" onClick="recordstaffcheck()"></input>
         <input type="button" value="show list of staff" class="btn btn-danger mt-4"></input>
