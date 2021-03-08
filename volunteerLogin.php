@@ -72,7 +72,7 @@
 
         <input type="button" value="Volunteer Login" class="btn btn-danger mt-4 mb-3" onClick="loginCheck()"></input>
       </form>
-      <p>If you don't sign up yet, please click <a href="signup.html">here</a></p>
+      <p>If you don't sign up yet, please click <a href="signup.php">here</a></p>
     </div>
   </section>
 
