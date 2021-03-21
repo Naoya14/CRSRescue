@@ -50,7 +50,7 @@ try
     $_SESSION['v_login'] = 1;
     $_SESSION['username'] = $username;
     echo '<script>alert("Sign Up successfully")';
-    header('Location: dashboard.php');
+    header('Location: volunteerMenu.php');
     exit();
   }
   else
