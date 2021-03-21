@@ -1,3 +1,13 @@
+<?php
+session_start();
+session_regenerate_id(true);
+if(isset($_SESSION['s_login']) == false)
+{
+  echo '<script>alert("You have not login yet");window.location = "index.php";</script>';
+  exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,7 +67,7 @@
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign out</a>
+              <a class="nav-link" href="signout.php">Sign out</a>
             </li>
           </ul>
         </div>
