@@ -39,8 +39,8 @@ try
     $prepare->bindValue(2, $password, PDO::PARAM_STR);
     $prepare->bindValue(3, $name, PDO::PARAM_STR);
     $prepare->bindValue(4, $phone, PDO::PARAM_STR);
-    $prepare->bindValue(4, $country, PDO::PARAM_STR);
-    $prepare->bindValue(4, $gender, PDO::PARAM_STR);
+    $prepare->bindValue(5, $country, PDO::PARAM_STR);
+    $prepare->bindValue(6, $gender, PDO::PARAM_STR);
   
     $prepare->execute();
   
