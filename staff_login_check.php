@@ -16,7 +16,7 @@ try
   $username = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
   $password = htmlspecialchars($password, ENT_QUOTES, 'UTF-8');
 
-  $sql = 'SELECT username FROM tb_staffs WHERE username=? AND password=?';
+  $sql = 'SELECT username, position FROM tb_staffs WHERE username=? AND password=?';
   $prepare = $dbh->prepare($sql);
   $prepare->bindValue(1, $username, PDO::PARAM_STR);
   $prepare->bindValue(2, $password, PDO::PARAM_STR);
@@ -30,11 +30,22 @@ try
   }
   else
   {
-    session_start();
-    $_SESSION['s_login'] = 1;
-    $_SESSION['username'] = $username;
-    header('Location: staffMenu.php');
-    exit();
+    if ($result['position'] == 'manager')
+    {
+      session_start();
+      $_SESSION['m_login'] = 1;
+      $_SESSION['username'] = $result['username'];
+      header('Location: managerMenu.php');
+      exit();
+    }
+    else
+    {
+      session_start();
+      $_SESSION['s_login'] = 1;
+      $_SESSION['username'] = $result['username'];
+      header('Location: staffMenu.php');
+      exit();
+    }
   }
 }
 catch (Exception $e)
@@ -43,14 +54,4 @@ catch (Exception $e)
   print "{$error}";
   exit();
 }
-
-$username = $row['username'];
-
-if($username == 'Putibiran'){
-    header("Location: /CRS/managerMenu.php");
-} else {
-    header("Location: /CRS/staffMenu.php");
-}
-
-?>
 ?>
