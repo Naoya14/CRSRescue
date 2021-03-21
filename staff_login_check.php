@@ -43,4 +43,14 @@ catch (Exception $e)
   print "{$error}";
   exit();
 }
+
+$username = $row['username'];
+
+if($username == 'Putibiran'){
+    header("Location: /CRS/managerMenu.php");
+} else {
+    header("Location: /CRS/staffMenu.php");
+}
+
+?>
 ?>
