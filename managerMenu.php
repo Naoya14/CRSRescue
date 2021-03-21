@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_regenerate_id(true);
-if(isset($_SESSION['s_login']) == false)
+if(isset($_SESSION['m_login']) == false)
 {
   echo '<script>alert("You have not login yet");window.location = "index.php";</script>';
   exit();
