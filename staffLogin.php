@@ -66,13 +66,13 @@
             <h5 class="card-title text-center">Staff Login</h5>
             <form class="form-signin" method="post" action="staff_login_check.php">
               <div class="form-label-group">
-                <input type="Username" id="inputUsername" class="form-control" placeholder="Username" required
+                <input type="Username" id="inputUsername" class="form-control" placeholder="Username" name="username" required
                   autofocus>
                 <label for="inputUsername">Username</label>
               </div>
 
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
                 <label for="inputPassword">Password</label>
               </div>
 
