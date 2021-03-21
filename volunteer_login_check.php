@@ -9,13 +9,13 @@ try
 
   $dbh = new PDO($dsn, $db_user, $db_password);
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  
+
   $username = $_POST['username'];
   $password = $_POST['password'];
-  
+
   $username = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
   $password = htmlspecialchars($password, ENT_QUOTES, 'UTF-8');
-  
+
   $sql = 'SELECT username FROM tb_volunteers WHERE username=? AND password=?';
   $prepare = $dbh->prepare($sql);
   $prepare->bindValue(1, $username, PDO::PARAM_STR);
@@ -36,7 +36,7 @@ try
     header('Location: dashboard.php');
     exit();
   }
-} 
+}
 catch (Exception $e)
 {
   $error = $e->getMessage();
