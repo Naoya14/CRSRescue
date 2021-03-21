@@ -31,7 +31,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="index.html">
+            <a class="navbar-brand js-scroll-trigger" href="index.php">
                 <i class="fas fa-hands-helping"></i> CRS
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -40,10 +40,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="volunteerLogin.html">Volunteer Login</a>
+                        <a class="nav-link js-scroll-trigger" href="volunteerLogin.php">Volunteer Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="staffLogin.html">Staff Login</a>
+                        <a class="nav-link js-scroll-trigger" href="staffLogin.php">Staff Login</a>
                     </li>
                 </ul>
             </div>
@@ -63,7 +63,7 @@
                     <p class="text-white-75 font-weight-light mb-5">
                         Our mission is help the people who get affected communities natural disaster
                     </p>
-                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="signup.html">Sign up</a>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="signup.php">Sign up</a>
                 </div>
             </div>
         </div>
