@@ -30,7 +30,7 @@ try
   }
   else
   {
-    if ($result['position'] == 'manager')
+    if ($result['position'] == 'Manager')
     {
       session_start();
       $_SESSION['m_login'] = 1;
