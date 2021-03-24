@@ -70,7 +70,7 @@
               </div>
 
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" pattern=".{8,}"   required title="8 chars minimum">
                 <label for="inputPassword">Password</label>
               </div>
 
@@ -82,7 +82,7 @@
 
               <div class="form-label-group">
                 <input type="phone" name="phone" class="form-control" id="phone" aria-describedby="phone"
-                  placeholder="Phone" pattern="^\d{3}-\d{3}-\d{4}$" required>
+                  placeholder="Phone" pattern="^\d{3}-\d{3}-\d{4}$" required title="111-222-3333">
                 <label for="phone">Phone(111-222-3333)</label>
               </div>
 
