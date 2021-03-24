@@ -119,7 +119,7 @@ if(isset($_SESSION['m_login']) == false)
           </div>
           <div class="form-group row">
             <div class="col-sm-10">
-              <button class="btn btn-red mt-3" type="submit">Record</button>
+              <button class="btn btn-purple mt-3" type="submit">Record</button>
             </div>
           </div>
         </form>
