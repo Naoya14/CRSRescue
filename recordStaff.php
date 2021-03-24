@@ -16,7 +16,7 @@ if(isset($_SESSION['m_login']) == false)
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Volunteer Menu</title>
+  <title>Manager Menu</title>
   <!-- Favicon-->
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
 
@@ -43,7 +43,7 @@ if(isset($_SESSION['m_login']) == false)
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Staff</div>
+      <div class="sidebar-heading">Manager</div>
       <div class="list-group list-group-flush">
         <a href="managerMenu.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
         <a href="recordStaff.php" class="list-group-item list-group-item-action bg-light">Record CRS Staff</a>
@@ -56,7 +56,7 @@ if(isset($_SESSION['m_login']) == false)
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-red" id="menu-toggle">Menu</button>
+        <button class="btn btn-dark" id="menu-toggle">Menu</button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -119,7 +119,7 @@ if(isset($_SESSION['m_login']) == false)
           </div>
           <div class="form-group row">
             <div class="col-sm-10">
-              <button class="btn btn-purple mt-3" type="submit">Record</button>
+              <button class="btn btn-dark mt-3" type="submit">Record</button>
             </div>
           </div>
         </form>
