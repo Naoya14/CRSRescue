@@ -56,7 +56,7 @@ if(isset($_SESSION['m_login']) == false)
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-gray-dark" id="menu-toggle">Menu</button>
+        <button class="btn btn-red" id="menu-toggle">Menu</button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -119,7 +119,7 @@ if(isset($_SESSION['m_login']) == false)
           </div>
           <div class="form-group row">
             <div class="col-sm-10">
-              <button class="btn btn-gray-dark mt-3" type="submit">Record</button>
+              <button class="btn btn-red mt-3" type="submit">Record</button>
             </div>
           </div>
         </form>
