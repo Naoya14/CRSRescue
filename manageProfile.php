@@ -75,30 +75,30 @@ if(isset($_SESSION['v_login']) == false)
       </nav>
 
       <div class="container-fluid">
-        <form class="m-3"> 
+        <form method="POST" action="manage_profile_check.php" class="m-3" enctype="multipart/form-data"> 
         <h3 class="mt-4 mb-4">Manage profile</h3>
           <div class="form-group row">
             <label for="inputName" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
-              <input type="text" name="name" class="form-control" id="inputName" placeholder="Name">
+              <input type="text" name="name" class="form-control" id="inputName" value="<?php print $_SESSION['name'] ?>" required>
             </div>
           </div>
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
-              <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" pattern=".{}|.{8,}">
+              <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" pattern=".{8,}" required title="minimum 8 characters">
             </div>
           </div>
           <div class="form-group row">
             <label for="inputPhone" class="col-sm-2 col-form-label">Phone</label>
             <div class="col-sm-10">
-              <input type="text" name="phone" class="form-control" id="inputPhone" placeholder="Phone" pattern=".{} | ^\d{3}-\d{3}-\d{4}$">
+              <input type="text" name="phone" class="form-control" id="inputPhone" placeholder="Phone" pattern="^\d{3}-\d{3}-\d{4}$" required title="111-222-3333" value="<?php print $_SESSION['phone'] ?>">
             </div>
           </div>
           <div class="form-group row">
             <label for="inputCountry" class="col-sm-2 col-form-label">Country</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="country" id="inputCountry" placeholder="Country">
+              <input type="text" class="form-control" name="country" id="inputCountry" placeholder="Country" required value="<?php print $_SESSION['country']?>">
             </div>
           </div>
           <br>
@@ -126,7 +126,7 @@ if(isset($_SESSION['v_login']) == false)
             <div class="col-sm-10">
               <div class="custom-file">
                 <label class="custom-file-label" for="customFile">Choose image</label>
-                <input type="file" class="custom-file-input" id="customFile">
+                <input type="file" name="image" class="custom-file-input" id="customFile" style="width:400px">
               </div>
             </div>
           </div>
