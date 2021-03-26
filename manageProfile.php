@@ -43,7 +43,7 @@ if(isset($_SESSION['v_login']) == false)
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Volunteer</div>
+      <div class="sidebar-heading">Admin</div>
       <div class="list-group list-group-flush">
         <a href="volunteerMenu.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
         <a href="manageProfile.php" class="list-group-item list-group-item-action bg-light">Manage Profile</a>
@@ -75,7 +75,7 @@ if(isset($_SESSION['v_login']) == false)
       </nav>
 
       <div class="container-fluid">
-        <form method="POST" action="manage_profile_check.php" class="m-3" enctype="multipart/form-data"> 
+        <form method="POST" action="manage_profile_check.php" class="m-3" enctype="multipart/form-data">
         <h3 class="mt-4 mb-4">Manage profile</h3>
           <div class="form-group row">
             <label for="inputName" class="col-sm-2 col-form-label">Name</label>
@@ -172,7 +172,7 @@ if(isset($_SESSION['v_login']) == false)
         date_input.datepicker(options);
       });
   </script>
-  
+
 </body>
 
 </html>
