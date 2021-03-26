@@ -35,7 +35,7 @@ try
   $prepare->bindValue(5, $_SESSION['username'], PDO::PARAM_STR);
   $prepare->execute();
 
-  if (!$type == "")
+  if(!(strcmp($type, "Choose") == 0))
   {
     if($image['size'] > 0)
     {

@@ -107,8 +107,8 @@ if(isset($_SESSION['v_login']) == false)
           <div class="form-group row">
             <label for="inputType" class="col-sm-2 col-form-label">Document Type</label>
             <div class="col-sm-10">
-              <select id="inputType" class="form-control" name="type">
-                <option selected>Choose...</option>
+              <select id="inputType" class="form-control" name="type" value="">
+                <option selected>Choose</option>
                 <option>PASSPORT</option>
                 <option>CERTIFICATE</option>
                 <option>VISA</option>
@@ -122,11 +122,10 @@ if(isset($_SESSION['v_login']) == false)
             </div>
           </div>
           <div class="form-group row">
-            <label for="customFile" class="col-sm-2 col-form-label">Choose image</label>
+            <label for="form-control-file" class="col-sm-2 col-form-label">Choose image</label>
             <div class="col-sm-10">
-              <div class="custom-file">
-                <label class="custom-file-label" for="customFile">Choose image</label>
-                <input type="file" name="image" class="custom-file-input" id="customFile" style="width:400px">
+              <div class="form-group">
+                <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
               </div>
             </div>
           </div>
