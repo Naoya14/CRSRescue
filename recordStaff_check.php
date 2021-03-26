@@ -16,7 +16,7 @@ try
   $phone = $_POST['phone'];
 
   $position = $_POST['position'];
-  $date = $_POST['date'];
+  $date = date ('Y-m-d', strtotime($_POST['date']));
 
   $username = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
   $password = htmlspecialchars($password, ENT_QUOTES, 'UTF-8');
