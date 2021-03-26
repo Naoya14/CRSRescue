@@ -43,7 +43,7 @@ if(isset($_SESSION['v_login']) == false)
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Admin</div>
+      <div class="sidebar-heading">Volunteer</div>
       <div class="list-group list-group-flush">
         <a href="volunteerMenu.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
         <a href="manageProfile.php" class="list-group-item list-group-item-action bg-light">Manage Profile</a>

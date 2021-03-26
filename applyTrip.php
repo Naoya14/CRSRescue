@@ -6,6 +6,21 @@ if(isset($_SESSION['v_login']) == false)
   echo '<script>alert("You have not login yet");window.location = "index.php";</script>';
   exit();
 }
+
+$dsn = 'mysql:dbname=crsrescue_db;host=localhost;charset=utf8';
+$db_user = "root";
+$db_password = "";
+
+$dbh = new PDO($dsn, $db_user, $db_password);
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$sql = 'SELECT * FROM tb_trips';
+$prepare = $dbh->prepare($sql);
+$prepare->execute();
+$result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+
+$bdh = null;
+
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +58,7 @@ if(isset($_SESSION['v_login']) == false)
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Admin</div>
+      <div class="sidebar-heading">Volunteer</div>
       <div class="list-group list-group-flush">
         <a href="volunteerMenu.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
         <a href="manageProfile.php" class="list-group-item list-group-item-action bg-light">Manage Profile</a>
@@ -75,8 +90,32 @@ if(isset($_SESSION['v_login']) == false)
       </nav>
 
       <div class="container-fluid">
-        <h3 class="mt-4 mb-4">Apply trip</h3>
-          
+        <h3 class="m-4">Apply Trip</h3>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Description</th>
+              <th scope="col">Trip Date</th>
+              <th scope="col">Location</th>
+              <th scope="col">Number</th>
+              <th scope="col">Crisis Type</th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php
+          for($i = 0; $i < count($result); $i++)
+          {
+            echo '<tr>';
+            foreach($result[$i] as $value)
+            {
+              echo '<td>', $value, '</td>';
+            }
+            echo '</tr>';
+          }
+          ?>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
