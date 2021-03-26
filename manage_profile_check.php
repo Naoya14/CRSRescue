@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 try
 {
   $dsn = 'mysql:dbname=crsrescue_db;host=localhost;charset=utf8';
@@ -15,10 +15,10 @@ try
   $country = $_POST['country'];
 
   $type = $_POST['type'];
-  $date = $_POST['date'];
+  $date = date ('Y-m-d', strtotime($_POST['date']));
   $image = $_FILES['image'];
 
-  $name = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
+  $name = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
   $password = htmlspecialchars($password, ENT_QUOTES, 'UTF-8');
   $phone = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
   $country = htmlspecialchars($country, ENT_QUOTES, 'UTF-8');
@@ -26,12 +26,13 @@ try
   $type = htmlspecialchars($type, ENT_QUOTES, 'UTF-8');
   $date = htmlspecialchars($date, ENT_QUOTES, 'UTF-8');
 
-  $sql_profile = 'UPDATE tb_volunteers SET name=?, password=?, phone=? country=? WHERE username=$_SESSION["username"]';
+  $sql_profile = 'UPDATE tb_volunteers SET name=?, password=?, phone=?, country=? WHERE username=?';
   $prepare = $dbh->prepare($sql_profile);
   $prepare->bindValue(1, $name, PDO::PARAM_STR);
   $prepare->bindValue(2, $password, PDO::PARAM_STR);
   $prepare->bindValue(3, $phone, PDO::PARAM_STR);
   $prepare->bindValue(4, $country, PDO::PARAM_STR);
+  $prepare->bindValue(5, $_SESSION['username'], PDO::PARAM_STR);
   $prepare->execute();
 
   if (!$type == "")
@@ -45,11 +46,12 @@ try
       else
       {
         move_uploaded_file($image['tmp_name'], './assets/img/'.$image['name']);
-        $sql_profile = 'UPDATE tb_volunteers SET documentType=?, expiryDate=?, image=? WHERE username=$_SESSION["username"]';
+        $sql_profile = 'INSERT INTO tb_documents(documentType, expiryDate, image, username) VALUES(?, ?, ?, ?)';
         $prepare = $dbh->prepare($sql_profile);
         $prepare->bindValue(1, $type, PDO::PARAM_STR);
         $prepare->bindValue(2, $date, PDO::PARAM_STR);
         $prepare->bindValue(3, $image['name'], PDO::PARAM_STR);
+        $prepare->bindValue(4, $_SESSION['username'], PDO::PARAM_STR);
         $prepare->execute();
 
         echo '<script>alert("Update your profile and the document successfully");window.location = "volunteerMenu.php";</script>';

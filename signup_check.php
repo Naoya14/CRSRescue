@@ -49,6 +49,10 @@ try
     session_start();
     $_SESSION['v_login'] = 1;
     $_SESSION['username'] = $username;
+    $_SESSION['password'] = $password;
+    $_SESSION['name'] = $name;
+    $_SESSION['phone'] = $phone;
+    $_SESSION['country'] = $country;
     echo '<script>alert("Sign Up successfully")';
     header('Location: volunteerMenu.php');
     exit();

@@ -107,7 +107,7 @@ if(isset($_SESSION['v_login']) == false)
           <div class="form-group row">
             <label for="inputType" class="col-sm-2 col-form-label">Document Type</label>
             <div class="col-sm-10">
-              <select id="inputType" class="form-control">
+              <select id="inputType" class="form-control" name="type">
                 <option selected>Choose...</option>
                 <option>PASSPORT</option>
                 <option>CERTIFICATE</option>
