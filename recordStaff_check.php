@@ -15,7 +15,7 @@ try
   $name = $_POST['name'];
   $phone = $_POST['phone'];
 
-  $type = $_POST['[type]'];
+  $position = $_POST['[position]'];
   $date = $_POST['date'];
 
   $username = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
