@@ -76,7 +76,8 @@ if(isset($_SESSION['m_login']) == false)
       <div class="container-fluid">
         <form class="m-3">
         <h3 class="mt-4 mb-4">Record CRSrescue Staff</h3>
-          <form class="form-signin" method="post" action="recordStaff_check.php">
+        <form class="form-signin" method="post" action="recordStaff.php">
+          <div class="form-group row">
             <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
             <div class="col-sm-10">
               <input type="text" name="username" class="form-control" id="inputUsername" placeholder="Username">
