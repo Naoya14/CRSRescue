@@ -16,7 +16,7 @@ try
   $phone = $_POST['phone'];
 
   $position = $_POST['position'];
-  $date = $_POST['date'];
+  $date = date ('Y-m-d', strtotime($_POST['date']));
 
   $username = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
   $password = htmlspecialchars($password, ENT_QUOTES, 'UTF-8');
@@ -26,10 +26,14 @@ try
   $position = htmlspecialchars($position, ENT_QUOTES, 'UTF-8');
   $date = htmlspecialchars($date, ENT_QUOTES, 'UTF-8');
 
-  $sql = 'SELECT username FROM tb_staffs WHERE username=? AND password=?';
-  $prepare = $dbh->prepare($sql);
+  $sql_profile = 'INSERT INTO tb_staffs(username, password, name, phone, position,date) VALUES(?, ?, ?, ?,?,?)';
+  $prepare = $dbh->prepare($sql_profile);
   $prepare->bindValue(1, $username, PDO::PARAM_STR);
   $prepare->bindValue(2, $password, PDO::PARAM_STR);
+  $prepare->bindValue(3, $name, PDO::PARAM_STR);
+  $prepare->bindValue(4, $phone, PDO::PARAM_STR);
+  $prepare->bindValue(5, $position, PDO::PARAM_STR);
+  $prepare->bindValue(6, $date, PDO::PARAM_STR);
   $prepare->execute();
 
   $result = $prepare->fetch(PDO::FETCH_ASSOC);
