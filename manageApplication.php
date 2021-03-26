@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_regenerate_id(true);
-if(isset($_SESSION['m_login']) == false)
+if(isset($_SESSION['s_login']) == false)
 {
   echo '<script>alert("You have not login yet");window.location = "index.php";</script>';
   exit();
@@ -16,7 +16,7 @@ if(isset($_SESSION['m_login']) == false)
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Manager Menu</title>
+  <title>Admin Menu</title>
   <!-- Favicon-->
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
 
@@ -43,11 +43,11 @@ if(isset($_SESSION['m_login']) == false)
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Manager</div>
+      <div class="sidebar-heading">Admin</div>
       <div class="list-group list-group-flush">
-        <a href="managerMenu.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-        <a href="recordStaff.php" class="list-group-item list-group-item-action bg-light">Record CRS Staff</a>
-        \
+        <a href="staffMenu.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+        <a href="organizeTrip.php" class="list-group-item list-group-item-action bg-light">Organize Trip</a>
+        <a href="manageApplication.php" class="list-group-item list-group-item-action bg-light"> Manage Application</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -56,7 +56,7 @@ if(isset($_SESSION['m_login']) == false)
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-dark" id="menu-toggle">Menu</button>
+        <button class="btn btn-primary" id="menu-toggle">Menu</button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,52 +75,38 @@ if(isset($_SESSION['m_login']) == false)
 
       <div class="container-fluid">
         <form class="m-3">
-        <h3 class="mt-4 mb-4">Record CRSrescue Staff</h3>
-        <form class="form-signin" method="post" action="recordStaff.php">
+        <h3 class="mt-4 mb-4">Manage Application</h3>
           <div class="form-group row">
-            <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
+            <label for="inputapplicationID" class="col-sm-2 col-form-label">ApplicationID</label>
             <div class="col-sm-10">
-              <input type="text" name="username" class="form-control" id="inputUsername" placeholder="Username">
+              <input type="text" name="applicationID" class="form-control" id="inputapplicationID" placeholder="applicationID">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-10">
-              <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" pattern=".{}|.{8,}">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-            <div class="col-sm-10">
-              <input type="text" name="name" class="form-control" id="inputName" placeholder="Name">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputPhone" class="col-sm-2 col-form-label">Phone</label>
-            <div class="col-sm-10">
-              <input type="text" name="phone" class="form-control" id="inputPhone" placeholder="Phone" pattern=".{} | ^\d{3}-\d{3}-\d{4}$">
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label for="position" class="col-sm-2 col-form-label">Position</label>
-            <div class="col-sm-10">
-              <select id="inputType" class="form-control">
-                <option selected>Choose...</option>
-                <option>Manager</option>
-                <option>Admin</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group row">
-             <label class="col-sm-2 col-form-label" for="date">Date</label>
+             <label class="col-sm-2 col-form-label" for="date">Application Date</label>
              <div class="col-sm-10">
               <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
             </div>
           </div>
           <div class="form-group row">
+            <label for="inputStatus" class="col-sm-2 col-form-label">Status</label>
             <div class="col-sm-10">
-              <button class="btn btn-dark mt-3" type="submit">Record</button>
+              <select id="inputType" class="form-control">
+                <option selected>Choose...</option>
+                <option>Accepted</option>
+                <option>Rejected</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputRemarks" class="col-sm-2 col-form-label">Remarks</label>
+            <div class="col-sm-10">
+              <input type="text" name="remarks" class="form-control" id="inputRemarks" placeholder="remarks">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button class="btn btn-primary mt-3" type="submit">Submit</button>
             </div>
           </div>
         </form>
