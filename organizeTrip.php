@@ -1,7 +1,7 @@
 <?php
 session_start();
 session_regenerate_id(true);
-if(isset($_SESSION['m_login']) == false)
+if(isset($_SESSION['s_login']) == false)
 {
   echo '<script>alert("You have not login yet");window.location = "index.php";</script>';
   exit();
@@ -46,8 +46,8 @@ if(isset($_SESSION['m_login']) == false)
       <div class="sidebar-heading">Manager</div>
       <div class="list-group list-group-flush">
         <a href="managerMenu.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-        <a href="recordStaff.php" class="list-group-item list-group-item-action bg-light">Record CRS Staff</a>
-        \
+        <a href="organizeTrip.php" class="list-group-item list-group-item-action bg-light">Organize Trip</a>
+        <a href=".php" class="list-group-item list-group-item-action bg-light"> Manage Application</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -56,7 +56,7 @@ if(isset($_SESSION['m_login']) == false)
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-dark" id="menu-toggle">Menu</button>
+        <button class="btn btn-green" id="menu-toggle">Menu</button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,46 +75,45 @@ if(isset($_SESSION['m_login']) == false)
 
       <div class="container-fluid">
         <form class="m-3">
-        <h3 class="mt-4 mb-4">Record CRSrescue Staff</h3>
+        <h3 class="mt-4 mb-4">Organize Trip</h3>
           <div class="form-group row">
-            <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
+            <label for="inputtripID" class="col-sm-2 col-form-label">TripID</label>
             <div class="col-sm-10">
-              <input type="text" name="username" class="form-control" id="inputUsername" placeholder="Username">
+              <input type="text" name="tripID" class="form-control" id="inputtripID" placeholder="tripID">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+            <label for="inputDescription" class="col-sm-2 col-form-label">Description</label>
             <div class="col-sm-10">
-              <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" pattern=".{}|.{8,}">
+              <input type="description" name="description" class="form-control" id="inputDescription" placeholder="description">
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-            <div class="col-sm-10">
-              <input type="text" name="name" class="form-control" id="inputName" placeholder="Name">
+             <label class="col-sm-2 col-form-label" for="date">Trip Date</label>
+             <div class="col-sm-10">
+              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputPhone" class="col-sm-2 col-form-label">Phone</label>
+            <label for="inputLocation" class="col-sm-2 col-form-label">Location</label>
             <div class="col-sm-10">
-              <input type="text" name="phone" class="form-control" id="inputPhone" placeholder="Phone" pattern=".{} | ^\d{3}-\d{3}-\d{4}$">
+              <input type="text" name="location" class="form-control" id="inputLocation" placeholder="location">
             </div>
           </div>
-
           <div class="form-group row">
-            <label for="inputType" class="col-sm-2 col-form-label">Position</label>
+            <label for="inputnumOfVolunteer" class="col-sm-2 col-form-label">Number of Volunteer</label>
+            <div class="col-sm-10">
+              <input type="text" name="numofVolunteer" class="form-control" id="inputnumOfVolunteer" placeholder="numofVolunteer">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputCrisisType" class="col-sm-2 col-form-label">Crisis Type</label>
             <div class="col-sm-10">
               <select id="inputType" class="form-control">
                 <option selected>Choose...</option>
-                <option>Manager</option>
-                <option>Admin</option>
+                <option>Earthquake</option>
+                <option>Wildfire</option>
               </select>
-            </div>
-          </div>
-          <div class="form-group row">
-             <label class="col-sm-2 col-form-label" for="date">Date</label>
-             <div class="col-sm-10">
-              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
             </div>
           </div>
           <div class="form-group row">
