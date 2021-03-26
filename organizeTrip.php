@@ -45,7 +45,7 @@ if(isset($_SESSION['s_login']) == false)
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">Staff</div>
       <div class="list-group list-group-flush">
-        <a href="managerMenu.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+        <a href="staffMenu.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
         <a href="organizeTrip.php" class="list-group-item list-group-item-action bg-light">Organize Trip</a>
         <a href=".php" class="list-group-item list-group-item-action bg-light"> Manage Application</a>
       </div>
