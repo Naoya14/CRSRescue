@@ -105,7 +105,7 @@ if(isset($_SESSION['m_login']) == false)
           <div class="form-group row">
             <label for="position" class="col-sm-2 col-form-label">Position</label>
             <div class="col-sm-10">
-              <select id="inputType" class="form-control">
+              <select id="position" class="form-control">
                 <option selected>Choose...</option>
                 <option>Manager</option>
                 <option>Admin</option>
