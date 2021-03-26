@@ -58,7 +58,7 @@ try
     echo '<script>alert("This Username is already used");window.location = "managerMenu.php";</script>';
   }
 }
-catch (Exception $e)
+catch (Exception $e)  
 {
   $error = $e->getMessage();
   print "{$error}";
