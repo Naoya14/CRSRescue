@@ -23,7 +23,7 @@ try
   $name = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
   $phone = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
 
-  $type = htmlspecialchars($type, ENT_QUOTES, 'UTF-8');
+  $type = htmlspecialchars($position, ENT_QUOTES, 'UTF-8');
   $date = htmlspecialchars($date, ENT_QUOTES, 'UTF-8');
 
   $sql = 'SELECT username FROM tb_staffs WHERE username=? AND password=?';
