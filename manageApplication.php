@@ -21,7 +21,7 @@ $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
 
 $bdh = null;
 
-/?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
