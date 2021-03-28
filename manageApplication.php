@@ -98,7 +98,7 @@ $bdh = null;
               <th scope="col">applicationID</th>
               <th scope="col">Application Date</th>
               <th scope="col">Status</th>
-                <td><input type=”text” name=”status” placeholder=”input the status”/></td>
+              
 
               <th scope="col">Remark</th>
             </tr>
