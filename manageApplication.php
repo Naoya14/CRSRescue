@@ -115,7 +115,6 @@ $bdh = null;
                  <ul class="status">
                    <li><a href="#">Accepted</a></li>
                    <li><a href="#">Rejected</a></li>
-                   <li><a href="#">JavaScript</a></li>
                  </ul>
                </div>
               </td>
