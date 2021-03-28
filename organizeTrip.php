@@ -77,12 +77,6 @@ if(isset($_SESSION['s_login']) == false)
         <form method="POST" action="organizeTrip_check.php" class="m-3">
         <h3 class="mt-4 mb-4">Organize Trip</h3>
           <div class="form-group row">
-            <label for="inputtripID" class="col-sm-2 col-form-label">TripID</label>
-            <div class="col-sm-10">
-              <input type="text" name="tripID" class="form-control" id="inputtripID" placeholder="tripID">
-            </div>
-          </div>
-          <div class="form-group row">
             <label for="inputDescription" class="col-sm-2 col-form-label">Description</label>
             <div class="col-sm-10">
               <input type="description" name="description" class="form-control" id="inputDescription" placeholder="description" required
@@ -90,11 +84,11 @@ if(isset($_SESSION['s_login']) == false)
             </div>
           </div>
           <div class="form-group row">
-             <label class="col-sm-2 col-form-label" for="date">Trip Date</label>
+             <label class="col-sm-2 col-form-label" for="date"> Trip Date</label>
              <div class="col-sm-10">
-              <input class="form-control" id="date" name="tripDate" placeholder="MM/DD/YYY" type="text"/>
+              <input class="form-control" id="tripDate" name="tripDate" placeholder="MM/DD/YYY" type="text"/>
             </div>
-          </div>  
+          </div>
           <div class="form-group row">
             <label for="inputLocation" class="col-sm-2 col-form-label">Location</label>
             <div class="col-sm-10">
