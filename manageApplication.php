@@ -117,7 +117,6 @@ $bdh = null;
                   <option>Rejected</option>
                 </select>
               </div></td>
-              <td><?php echo $trip['remark']; ?></td>
               <td>
               <div class="form-group row">
                   <div class="col-sm-10">
@@ -125,6 +124,8 @@ $bdh = null;
                   </div>
               </div>
               </td>
+              <td><?php echo $trip['remark']; ?></td>
+
               <td>
               <div class="form-group row">
                 <div class="col-sm-10">
