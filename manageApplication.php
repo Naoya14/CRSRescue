@@ -120,7 +120,6 @@ $bdh = null;
               <td><?php echo $trip['remark']; ?></td>
               <td>
               <div class="form-group row">
-                  <label for="inputRemark" class="col-sm-2 col-form-label">Remark</label>
                   <div class="col-sm-10">
                     <input type="text" name="remark" class="form-control" id="inputRemark" placeholder="remark">
                   </div>
