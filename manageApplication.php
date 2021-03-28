@@ -111,14 +111,8 @@ $bdh = null;
               <td><?php echo $trip['status']; ?></td>
               <td><?php echo $trip['remark']; ?></td>
               <td>
-                <div class="dropdown">
-                 <button class="btn btn-sucess dropdown-toggle" type="button" data-toggle="dropdown">Status
-                 <span class="caret"></span></button>
-                 <ul class="status">
-                   <li><a href="#">Accepted</a></li>
-                   <li><a href="#">Rejected</a></li>
-                 </ul>
-               </div>
+              <button class="btn btn-outline-primary btn-sm" onclick="location.href='apply_trip_check.php?id=<?=$trip['tripID'];?>&username=<?=$trip['username'];?>'">Apply</button>
+
               </td>
               <td>
 
