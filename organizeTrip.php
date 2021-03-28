@@ -43,11 +43,11 @@ if(isset($_SESSION['s_login']) == false)
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Staff</div>
+      <div class="sidebar-heading">Admin</div>
       <div class="list-group list-group-flush">
         <a href="staffMenu.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
         <a href="organizeTrip.php" class="list-group-item list-group-item-action bg-light">Organize Trip</a>
-        <a href=".php" class="list-group-item list-group-item-action bg-light"> Manage Application</a>
+        <a href="manageApplication.php" class="list-group-item list-group-item-action bg-light"> Manage Application</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -56,7 +56,7 @@ if(isset($_SESSION['s_login']) == false)
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-secondary" id="menu-toggle">Menu</button>
+        <button class="btn btn-success" id="menu-toggle">Menu</button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,7 +86,7 @@ if(isset($_SESSION['s_login']) == false)
           <div class="form-group row">
              <label class="col-sm-2 col-form-label" for="date">Trip Date</label>
              <div class="col-sm-10">
-              <input class="form-control" id="tripDate" name="tripDate" placeholder="MM/DD/YYY" type="text"/>
+              <input class="form-control" id="tripDate" name="date" placeholder="MM/DD/YYY" type="text"/>
             </div>
           </div>
           <div class="form-group row">
@@ -115,7 +115,7 @@ if(isset($_SESSION['s_login']) == false)
           </div>
           <div class="form-group row">
             <div class="col-sm-10">
-              <button class="btn btn-secondary mt-3" type="submit">Submit</button>
+              <button class="btn btn-success mt-3" type="submit">Submit</button>
             </div>
           </div>
         </form>
