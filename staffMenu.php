@@ -56,7 +56,7 @@ if(isset($_SESSION['s_login']) == false)
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-blue" id="menu-toggle">Menu</button>
+        <button class="btn btn-success" id="menu-toggle">Menu</button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,7 +74,7 @@ if(isset($_SESSION['s_login']) == false)
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Welcome to CRS-Rescue</h1>
+        <h1 class="mt-4">Welcome to CRS-Rescue Admin Page</h1>
         <br>
         <p></p>
 
