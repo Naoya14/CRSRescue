@@ -100,20 +100,23 @@ $bdh = null;
               <th scope="col">Location</th>
               <th scope="col">Number</th>
               <th scope="col">Crisis Type</th>
+              <th scope="col">Form</th>
             </tr>
           </thead>
           <tbody>
-          <?php
-          for($i = 0; $i < count($result); $i++)
-          {
-            echo '<tr>';
-            foreach($result[$i] as $value)
-            {
-              echo '<td>', $value, '</td>';
-            }
-            echo '</tr>';
-          }
-          ?>
+            <?php foreach($result as $trip): ?>
+            <tr>
+              <td><?php echo $trip['tripID']; ?></td>
+              <td><?php echo $trip['description']; ?></td>
+              <td><?php echo $trip['tripDate']; ?></td>
+              <td><?php echo $trip['location']; ?></td>
+              <td><?php echo $trip['numVolunteers']; ?></td>
+              <td><?php echo $trip['crisisType']; ?></td>
+              <td>
+                <button class="btn btn-outline-primary btn-sm" onclick="location.href='apply_trip_check.php?id=<?php echo $trip['tripID']; ?>'">Apply</button>
+              </td>
+            </tr>
+            <?php endforeach; ?>
           </tbody>
         </table>
       </div>
@@ -155,5 +158,4 @@ $bdh = null;
   </script>
 
 </body>
-
 </html>
