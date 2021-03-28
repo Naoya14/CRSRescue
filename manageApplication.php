@@ -98,6 +98,13 @@ $bdh = null;
               <th scope="col">applicationID</th>
               <th scope="col">Application Date</th>
               <th scope="col">Status</th>
+              <td>
+                <button class="btn btn-sucess dropdown-toggle" type="button" data-toggle="dropdown">Status
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                  <li><a href="#">Accepted</a></li>
+                  <li><a href="#">Rejected</a></li>
+              </td>
 
 
               <th scope="col">Remark</th>
@@ -109,13 +116,6 @@ $bdh = null;
               <td><?php echo $trip['applicationID']; ?></td>
               <td><?php echo $trip['applicationDate']; ?></td>
               <td><?php echo $trip['status']; ?></td>
-              <td>
-                <button class="btn btn-sucess dropdown-toggle" type="button" data-toggle="dropdown">Status
-                  <span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                  <li><a href="#">Accepted</a></li>
-                  <li><a href="#">Rejected</a></li>
-              </td>
               <td><?php echo $trip['remark']; ?></td>
               <td>
                 <textarea rows="4" cols="50" name="comment" form="usrform">
