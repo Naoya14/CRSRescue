@@ -98,13 +98,6 @@ $bdh = null;
               <th scope="col">applicationID</th>
               <th scope="col">Application Date</th>
               <th scope="col">Status</th>
-              <td>
-                <button class="btn btn-sucess dropdown-toggle" type="button" data-toggle="dropdown">Status
-                  <span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                  <li><a href="#">Accepted</a></li>
-                  <li><a href="#">Rejected</a></li>
-              </td>
 
 
               <th scope="col">Remark</th>
