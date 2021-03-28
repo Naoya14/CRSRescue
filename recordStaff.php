@@ -75,7 +75,7 @@ if(isset($_SESSION['m_login']) == false)
 
       <div class="container-fluid">
         <form class="m-3">
-        <h3 class="mt-4 mb-4">Record CRSrescue Staff</h3>
+        <h3 class="mt-4 mb-4">Record CRS Rescue Staff</h3>
         <form method="POST" action="recordStaff_check.php" class="m-3">
           <div class="form-group row">
             <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
@@ -105,7 +105,7 @@ if(isset($_SESSION['m_login']) == false)
           <div class="form-group row">
             <label for="position" class="col-sm-2 col-form-label">Position</label>
             <div class="col-sm-10">
-              <select id="position" class="form-control">
+              <select name= "position" id="position" class="form-control">
                 <option selected>Choose...</option>
                 <option>Manager</option>
                 <option>Admin</option>
@@ -115,7 +115,7 @@ if(isset($_SESSION['m_login']) == false)
           <div class="form-group row">
              <label class="col-sm-2 col-form-label" for="date">Date</label>
              <div class="col-sm-10">
-              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+              <input class="form-control" id="dateJoin" name="date" placeholder="MM/DD/YYY" type="text"/>
             </div>
           </div>
           <div class="form-group row">

@@ -16,7 +16,7 @@ try
   $phone = $_POST['phone'];
 
   $position = $_POST['position'];
-  $date = date ('Y-m-d', strtotime($_POST['date']));
+  $dateJpin = date ('Y-m-d', strtotime($_POST['date']));
 
   $username = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
   $password = htmlspecialchars($password, ENT_QUOTES, 'UTF-8');
@@ -33,7 +33,7 @@ try
   $prepare->bindValue(3, $name, PDO::PARAM_STR);
   $prepare->bindValue(4, $phone, PDO::PARAM_STR);
   $prepare->bindValue(5, $position, PDO::PARAM_STR);
-  $prepare->bindValue(6, $date, PDO::PARAM_STR);
+  $prepare->bindValue(6, $dateJoin, PDO::PARAM_STR);
   $prepare->execute();
 
   $result = $prepare->fetch(PDO::FETCH_ASSOC);
