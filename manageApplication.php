@@ -72,23 +72,6 @@ if(isset($_SESSION['s_login']) == false)
           </ul>
         </div>
       </nav>
-
-      <div class="container-fluid">
-        <form class="m-3">
-        <h3 class="mt-4 mb-4">Manage Application</h3>
-          <div class="form-group row">
-            <label for="inputapplicationID" class="col-sm-2 col-form-label">ApplicationID</label>
-            <div class="col-sm-10">
-              <input type="text" name="applicationID" class="form-control" id="inputapplicationID" placeholder="applicationID">
-            </div>
-          </div>
-          <div class="form-group row">
-             <label class="col-sm-2 col-form-label" for="date">Application Date</label>
-             <div class="col-sm-10">
-              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
-            </div>
-          </div>
-          <div class="form-group row">
             <label for="inputStatus" class="col-sm-2 col-form-label">Status</label>
             <div class="col-sm-10">
               <select id="inputType" class="form-control">
