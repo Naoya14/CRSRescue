@@ -13,7 +13,7 @@ try
   $description = $_POST['description'];
   $tripDate = date ('Y-m-d', strtotime($_POST['tripDate']));
   $location = $_POST['location'];
-  $numVolunteer = $_POST['numVolunteer'];
+  $numVolunteers = $_POST['numVolunteers'];
   $crisisType = $_POST['crisisType'];
 
 
@@ -22,16 +22,16 @@ try
   $tripDate = htmlspecialchars($tripDate, ENT_QUOTES, 'UTF-8');
   $location = htmlspecialchars($location, ENT_QUOTES, 'UTF-8');
 
-  $numVolunteer = htmlspecialchars($numVolunteer, ENT_QUOTES, 'UTF-8');
+  $numVolunteers = htmlspecialchars($numVolunteers, ENT_QUOTES, 'UTF-8');
   $crisisType = htmlspecialchars($crisisType, ENT_QUOTES, 'UTF-8');
 
-  $sql_profile = 'INSERT INTO tb_trips(tripID, description, tripDate, location, numVolunteer, crisisType) VALUES(?, ?, ?, ?, ?, ?)';
+  $sql_profile = 'INSERT INTO tb_trips(tripID, description, tripDate, location, numVolunteers, crisisType) VALUES(?, ?, ?, ?, ?, ?)';
   $prepare = $dbh->prepare($sql_profile);
   $prepare->bindValue(1, $tripID, PDO::PARAM_STR);
   $prepare->bindValue(2, $description, PDO::PARAM_STR);
   $prepare->bindValue(3, $tripDate, PDO::PARAM_STR);
   $prepare->bindValue(4, $location, PDO::PARAM_STR);
-  $prepare->bindValue(5, $numVolunteer, PDO::PARAM_STR);
+  $prepare->bindValue(5, $numVolunteers, PDO::PARAM_STR);
   $prepare->bindValue(6, $crisisType, PDO::PARAM_STR);
   $prepare->execute();
 
