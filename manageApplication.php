@@ -110,7 +110,7 @@ $bdh = null;
               <td><?php echo $application['status']; ?></td>
               <td>
                 <div class="col-sm-10">
-                <select  name= "status" id="inputStatus" class="form-control">
+                <select  name= "status" id="inputStatus" action="manageApplication_check.php" class="form-control">
                   <option selected>Status</option>
                   <option>Accepted</option>
                   <option>Rejected</option>
@@ -120,7 +120,7 @@ $bdh = null;
               <td>
               <div class="form-group row">
                   <div class="col-sm-10">
-                    <input type="text" name="remark" class="form-control" id="inputRemark" placeholder="remark">
+                    <input type="text" name="remark" class="form-control" id="inputRemark" action="manageApplication_check.php" placeholder="remark">
                   </div>
               </div>
               </td>
