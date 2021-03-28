@@ -14,7 +14,9 @@ $db_password = "";
 $dbh = new PDO($dsn, $db_user, $db_password);
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$sql = 'SELECT * FROM tb_trips';
+$sql = 'SELECT *, count(tb_trips.tripID) AS count 
+FROM tb_trips JOIN tb_applications ON tb_trips.tripID=tb_applications.tripID GROUP BY tb_trips.tripID
+HAVING numVolunteers >= count';
 $prepare = $dbh->prepare($sql);
 $prepare->execute();
 $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
