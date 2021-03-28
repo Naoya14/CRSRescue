@@ -43,7 +43,7 @@ if(isset($_SESSION['s_login']) == false)
 
     <!-- Sidebar -->
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Staff</div>
+      <div class="sidebar-heading">Admin</div>
       <div class="list-group list-group-flush">
         <a href="staffMenu.php" class="list-group-item list-group-item-action bg-light">Dashboard</a>
         <a href="organizeTrip.php" class="list-group-item list-group-item-action bg-light">Organize Trip</a>
@@ -56,7 +56,7 @@ if(isset($_SESSION['s_login']) == false)
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn btn-secondary" id="menu-toggle">Menu</button>
+        <button class="btn btn-success" id="menu-toggle">Menu</button>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -115,7 +115,7 @@ if(isset($_SESSION['s_login']) == false)
           </div>
           <div class="form-group row">
             <div class="col-sm-10">
-              <button class="btn btn-secondary mt-3" type="submit">Submit</button>
+              <button class="btn btn-success mt-3" type="submit">Submit</button>
             </div>
           </div>
         </form>
