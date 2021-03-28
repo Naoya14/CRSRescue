@@ -98,16 +98,6 @@ $bdh = null;
               <th scope="col">applicationID</th>
               <th scope="col">Application Date</th>
               <th scope="col">Status</th>
-              <th scope="col">Remark</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php foreach($result as $trip): ?>
-            <tr>
-              <td><?php echo $trip['applicationID']; ?></td>
-              <td><?php echo $trip['applicationDate']; ?></td>
-              <td><?php echo $trip['status']; ?></td>
-              <td><?php echo $trip['remark']; ?></td>
               <td>
                 <div class="dropdown">
                  <button class="btn btn-sucess dropdown-toggle" type="button" data-toggle="dropdown">Status
@@ -118,6 +108,18 @@ $bdh = null;
                  </ul>
                </div>
               </td>
+
+              <th scope="col">Remark</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach($result as $trip): ?>
+            <tr>
+              <td><?php echo $trip['applicationID']; ?></td>
+              <td><?php echo $trip['applicationDate']; ?></td>
+              <td><?php echo $trip['status']; ?></td>
+              <td><?php echo $trip['remark']; ?></td>
+
               <td>
 
             </tr>
