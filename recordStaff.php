@@ -86,7 +86,7 @@ if(isset($_SESSION['m_login']) == false)
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
-              <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" pattern=".{}|.{8,}" required title="minimum 8 characters">>
+              <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" pattern=".{}|.{8,}" required title="minimum 8 characters">
             </div>
           </div>
           <div class="form-group row">
@@ -120,7 +120,7 @@ if(isset($_SESSION['m_login']) == false)
           </div>
           <div class="form-group row">
             <div class="col-sm-10">
-              <button class="btn btn-dark mt-3" type="submit" onClick="recordstaffcheck()">Record</button>
+              <button class="btn btn-dark mt-3" type="submit">Record</button>
             </div>
           </div>
         </form>
