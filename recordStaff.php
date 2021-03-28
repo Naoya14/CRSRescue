@@ -75,7 +75,7 @@ if(isset($_SESSION['m_login']) == false)
 
       <div class="container-fluid">
         <form class="m-3">
-        <h3 class="mt-4 mb-4">Record CRSrescue Staff</h3>
+        <h3 class="mt-4 mb-4">Record CRS Rescue Staff</h3>
         <form method="POST" action="recordStaff_check.php" class="m-3">
           <div class="form-group row">
             <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
@@ -86,7 +86,7 @@ if(isset($_SESSION['m_login']) == false)
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
-              <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" pattern=".{}|.{8,}">
+              <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" pattern=".{}|.{8,}" required title="minimum 8 characters">
             </div>
           </div>
           <div class="form-group row">
@@ -98,14 +98,14 @@ if(isset($_SESSION['m_login']) == false)
           <div class="form-group row">
             <label for="inputPhone" class="col-sm-2 col-form-label">Phone</label>
             <div class="col-sm-10">
-              <input type="text" name="phone" class="form-control" id="inputPhone" placeholder="Phone" pattern=".{} | ^\d{3}-\d{3}-\d{4}$">
+              <input type="text" name="phone" class="form-control" id="inputPhone" placeholder="Phone" pattern=".{} | ^\d{3}-\d{3}-\d{4}$"  required title="111-222-3333">
             </div>
           </div>
 
           <div class="form-group row">
             <label for="position" class="col-sm-2 col-form-label">Position</label>
             <div class="col-sm-10">
-              <select id="position" class="form-control">
+              <select name= "position" id="position" class="form-control">
                 <option selected>Choose...</option>
                 <option>Manager</option>
                 <option>Admin</option>
@@ -115,12 +115,12 @@ if(isset($_SESSION['m_login']) == false)
           <div class="form-group row">
              <label class="col-sm-2 col-form-label" for="date">Date</label>
              <div class="col-sm-10">
-              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+              <input class="form-control" id="dateJoin" name="date" placeholder="MM/DD/YYY" type="text"/>
             </div>
           </div>
           <div class="form-group row">
             <div class="col-sm-10">
-              <button class="btn btn-dark mt-3" type="submit">Record</button>
+              <button class="btn btn-dark mt-3" type="submit" >Record</button>
             </div>
           </div>
         </form>
