@@ -98,8 +98,6 @@ $bdh = null;
               <th scope="col">applicationID</th>
               <th scope="col">Application Date</th>
               <th scope="col">Status</th>
-
-
               <th scope="col">Remark</th>
             </tr>
           </thead>
@@ -109,24 +107,38 @@ $bdh = null;
               <td><?php echo $trip['applicationID']; ?></td>
               <td><?php echo $trip['applicationDate']; ?></td>
               <td><?php echo $trip['status']; ?></td>
-              <td>
-                <button class="btn btn-sucess dropdown-toggle" type="button" data-toggle="dropdown">Status
-                  <span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                  <li><a href="#">Accepted</a></li>
-                  <li><a href="#">Rejected</a></li>
-              </td>
               <td><?php echo $trip['remark']; ?></td>
-              <td>
-                <textarea rows="4" cols="50" name="comment" form="usrform">
-                  Enter remark here</textarea>
-              </td>
-
             </tr>
 
             <?php endforeach; ?>
           </tbody>
         </table>
+        <div class="form-group row">
+          <label for="inputStatus" class="col-sm-2 col-form-label">Status</label>
+          <div class="col-sm-10">
+            <select  name= "status" id="inputStatus" class="form-control">
+              <option selected>Choose...</option>
+              <option>Accepted</option>
+              <option>Rejected</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputRemark" class="col-sm-2 col-form-label">Remark</label>
+          <div class="col-sm-10">
+            <input type="text" name="remark" class="form-control" id="inputRemark" placeholder="remark">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-10">
+            <button class="btn btn-success mt-3" type="submit">Updated</button>
+          </div>
+        </div>
+
+
+
         </div>
       </div>
       </div>
