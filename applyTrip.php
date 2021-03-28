@@ -113,7 +113,7 @@ $bdh = null;
               <td><?php echo $trip['numVolunteers']; ?></td>
               <td><?php echo $trip['crisisType']; ?></td>
               <td>
-                <button class="btn btn-outline-primary btn-sm" onclick="location.href='apply_trip_check.php?id=<?php echo $trip['tripID']; ?>'">Apply</button>
+                <button class="btn btn-outline-primary btn-sm" onclick="location.href='apply_trip_check.php?id=<?php echo $trip['tripID'];?>username=<?php echo $trip['username'];?>'">Apply</button>
               </td>
             </tr>
             <?php endforeach; ?>
