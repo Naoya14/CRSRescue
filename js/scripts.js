@@ -60,4 +60,23 @@
     }
   });
 
+  function recordstaffcheck() {
+    var username = document.recordstaff.username.value;
+    var password = document.recordstaff.password.value;
+    var name = document.recordstaff.name.value;
+
+    if (username == null || username == '') {
+      alert("userName can't be blank");
+      return;
+    } else if (password.length < 6) {
+      alert('Password must be at least 6 characters long');
+      return;
+    } else if (name == null || name == '') {
+      alert("userName can't be blank");
+      return;
+    } else {
+      return document.recordstaff.submit();
+    }
+  }
+
 })(jQuery); // End of use strict
