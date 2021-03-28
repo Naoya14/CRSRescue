@@ -92,15 +92,14 @@ if(isset($_SESSION['s_login']) == false)
           <div class="form-group row">
             <label for="inputLocation" class="col-sm-2 col-form-label">Location</label>
             <div class="col-sm-10">
-              <input type="text" name="location" class="form-control" id="inputLocation" placeholder="location" required
-                autofocus>
+              <input type="text" name="location" class="form-control" id="inputLocation" placeholder="location">
             </div>
           </div>
           <div class="form-group row">
             <label for="inputnumVolunteer" class="col-sm-2 col-form-label">Number of Volunteer</label>
             <div class="col-sm-10">
-              <input type="text" name="numVolunteer" class="form-control" id="inputnumOfVolunteer" placeholder="numofVolunteer" required
-                autofocus>
+              <input type="number" name="numVolunteers" class="form-control" id="inputnumOfVolunteer" placeholder="numofVolunteer"
+                >
             </div>
           </div>
           <div class="form-group row">
