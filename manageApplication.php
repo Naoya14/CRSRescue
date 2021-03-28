@@ -113,16 +113,14 @@ $bdh = null;
                 <button class="btn btn-sucess dropdown-toggle" type="button" data-toggle="dropdown">Status
                   <span class="caret"></span></button>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Accepted</a></li>
-                    <li><a href="#">Rejected</a></li>
+                  <li><a href="#">Accepted</a></li>
+                  <li><a href="#">Rejected</a></li>
               </td>
               <td><?php echo $trip['remark']; ?></td>
               <td>
-
-
-
+                <textarea rows="4" cols="50" name="comment" form="usrform">
+                  Enter remark here</textarea>
               </td>
-              <td>
 
             </tr>
 
