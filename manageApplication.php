@@ -112,11 +112,12 @@ $bdh = null;
               <td>
                 <div class="col-sm-10">
                 <select  name= "status" id="inputStatus" class="form-control">
-                  <option selected>Choose...</option>
+                  <option selected>Status</option>
                   <option>Accepted</option>
                   <option>Rejected</option>
                 </select>
-              </div></td>
+              </div>
+              </td>
               <td>
               <div class="form-group row">
                   <div class="col-sm-10">
@@ -124,8 +125,6 @@ $bdh = null;
                   </div>
               </div>
               </td>
-              <td><?php echo $trip['remark']; ?></td>
-
               <td>
               <div class="form-group row">
                 <div class="col-sm-10">
@@ -133,6 +132,9 @@ $bdh = null;
                 </div>
               </div>
               </td>
+              <td><?php echo $trip['remark']; ?></td>
+
+
             </tr>
 
             <?php endforeach; ?>
