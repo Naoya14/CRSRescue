@@ -28,12 +28,13 @@ try
 
   if($result==false)
   {
-    $sql = 'INSERT INTO tb_applications(applicationDate, status, username_staff, username_volunteer) VALUES (?, ?, ?, ?)';
+    $sql = 'INSERT INTO tb_applications(applicationDate, status, username_staff, username_volunteer, tripID) VALUES (?, ?, ?, ?, ?)';
     $prepare = $dbh->prepare($sql);
     $prepare->bindValue(1, $applicationDate, PDO::PARAM_STR);
     $prepare->bindValue(2, $status, PDO::PARAM_STR);
     $prepare->bindValue(3, $username, PDO::PARAM_STR);
     $prepare->bindValue(4, $_SESSION['username'], PDO::PARAM_STR);
+    $prepare->bindValue(5, $id, PDO::PARAM_STR);
     
     $prepare->execute();
   
