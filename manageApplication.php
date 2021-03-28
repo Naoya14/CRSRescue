@@ -6,6 +6,21 @@ if(isset($_SESSION['s_login']) == false)
   echo '<script>alert("You have not login yet");window.location = "index.php";</script>';
   exit();
 }
+
+$dsn = 'mysql:dbname=crsrescue_db;host=localhost;charset=utf8';
+$db_user = "root";
+$db_password = "";
+
+$dbh = new PDO($dsn, $db_user, $db_password);
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$sql = 'SELECT * FROM tb_applications';
+$prepare = $dbh->prepare($sql);
+$prepare->execute();
+$result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+
+$bdh = null;
+
 ?>
 
 <!DOCTYPE html>
@@ -74,45 +89,67 @@ if(isset($_SESSION['s_login']) == false)
       </nav>
 
       <div class="container-fluid">
-        <form class="m-3">
-        <h3 class="mt-4 mb-4">Manage Application</h3>
-          <div class="form-group row">
-            <label for="inputapplicationID" class="col-sm-2 col-form-label">ApplicationID</label>
-            <div class="col-sm-10">
-              <input type="text" name="applicationID" class="form-control" id="inputapplicationID" placeholder="applicationID">
-            </div>
-          </div>
-          <div class="form-group row">
-             <label class="col-sm-2 col-form-label" for="date">Application Date</label>
-             <div class="col-sm-10">
-              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputStatus" class="col-sm-2 col-form-label">Status</label>
-            <div class="col-sm-10">
-              <select id="inputType" class="form-control">
-                <option selected>Choose...</option>
-                <option>Accepted</option>
-                <option>Rejected</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputRemarks" class="col-sm-2 col-form-label">Remarks</label>
-            <div class="col-sm-10">
-              <input type="text" name="remarks" class="form-control" id="inputRemarks" placeholder="remarks">
-            </div>
-          </div>
-          <div class="form-group row">
-            <div class="col-sm-10">
-              <button class="btn btn-success mt-3" type="submit">Submit</button>
-            </div>
-          </div>
-        </form>
+        <h3 class="m-4">Manage Application</h3>
+        <div class="container">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">applicationID</th>
+              <th scope="col">Application Date</th>
+              <th scope="col">Status</th>
+              <th scope="col">New Status</th>
+              <th scope="col">Remark</th>
+              <<th scope="col">Updated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach($result as $application): ?>
+            <tr>
+              <td><?php echo $application['applicationID']; ?></td>
+              <td><?php echo $application['applicationDate']; ?></td>
+              <td><?php echo $application['status']; ?></td>
+              <td>
+                <div class="col-sm-10">
+                <select  name= "status" id="inputStatus" action="manageApplication_check.php" class="form-control">
+                  <option selected>Status</option>
+                  <option>Accepted</option>
+                  <option>Rejected</option>
+                </select>
+              </div>
+              </td>
+              <td>
+              <div class="form-group row">
+                  <div class="col-sm-10">
+                    <input type="text" name="remark" class="form-control" id="inputRemark" action="manageApplication_check.php" placeholder="remark">
+                  </div>
+              </div>
+              </td>
+              <td>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                <button class="btn btn-success mt-3" type="submit" onclick="location.href='manageApplication_check.php?id=<?=$application['applicationID'];?>&status=<?=$application['status'];?>&remark=<?=$application['remark'];?>">Updated</button>
+                </div>
+              </div>
+              </td>
+              <td><?php echo $application['remark']; ?></td>
+
+
+            </tr>
+
+            <?php endforeach; ?>
+          </tbody>
+
+
+
+
+
+
+
+        </div>
       </div>
-    </div>
-  </div>
+      </div>
+      </div>
+
 
   <!-- Bootstrap core JS-->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
