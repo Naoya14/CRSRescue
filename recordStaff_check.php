@@ -14,7 +14,6 @@ try
   $password = $_POST['password'];
   $name = $_POST['name'];
   $phone = $_POST['phone'];
-
   $position = $_POST['position'];
   $dateJoin = date ('Y-m-d', strtotime($_POST['dateJoin']));
 
@@ -24,7 +23,7 @@ try
   $phone = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
 
   $position = htmlspecialchars($position, ENT_QUOTES, 'UTF-8');
-  $date = htmlspecialchars($date, ENT_QUOTES, 'UTF-8');
+  $dateJoin = htmlspecialchars($dateJoin, ENT_QUOTES, 'UTF-8');
 
   $sql_profile = 'INSERT INTO tb_staffs(username, password, name, phone, position,dateJoin) VALUES(?, ?, ?, ?,?,?)';
   $prepare = $dbh->prepare($sql_profile);
