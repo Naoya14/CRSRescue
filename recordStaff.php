@@ -79,7 +79,8 @@ if(isset($_SESSION['m_login']) == false)
           <div class="form-group row">
             <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
             <div class="col-sm-10">
-              <input type="text" name="username" class="form-control" id="inputUsername" placeholder="Username">
+              <input type="text" name="username" class="form-control" id="inputUsername" placeholder="Username" required
+                autofocus>
 
             </div>
           </div>
