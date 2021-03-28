@@ -72,6 +72,8 @@ if(isset($_SESSION['s_login']) == false)
           </ul>
         </div>
       </nav>
+
+      
             <label for="inputStatus" class="col-sm-2 col-form-label">Status</label>
             <div class="col-sm-10">
               <select id="inputType" class="form-control">
