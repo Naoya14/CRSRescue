@@ -74,7 +74,7 @@ if(isset($_SESSION['s_login']) == false)
       </nav>
 
       <div class="container-fluid">
-        <form class="m-3">
+        <form method="POST" action="organizeTrip_check.php" class="m-3">
         <h3 class="mt-4 mb-4">Organize Trip</h3>
           <div class="form-group row">
             <label for="inputtripID" class="col-sm-2 col-form-label">TripID</label>
@@ -93,7 +93,7 @@ if(isset($_SESSION['s_login']) == false)
           <div class="form-group row">
              <label class="col-sm-2 col-form-label" for="date">Trip Date</label>
              <div class="col-sm-10">
-              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+              <input class="form-control" id="date" name="tripDate" placeholder="MM/DD/YYY" type="text"/>
             </div>
           </div>
           <div class="form-group row">
@@ -104,16 +104,16 @@ if(isset($_SESSION['s_login']) == false)
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputnumOfVolunteer" class="col-sm-2 col-form-label">Number of Volunteer</label>
+            <label for="inputnumVolunteer" class="col-sm-2 col-form-label">Number of Volunteer</label>
             <div class="col-sm-10">
-              <input type="text" name="numofVolunteer" class="form-control" id="inputnumOfVolunteer" placeholder="numofVolunteer" required
+              <input type="text" name="numVolunteer" class="form-control" id="inputnumOfVolunteer" placeholder="numofVolunteer" required
                 autofocus>
             </div>
           </div>
           <div class="form-group row">
-            <label for="inputCrisisType" class="col-sm-2 col-form-label">Crisis Type</label>
+            <label for="inputcrisisType" class="col-sm-2 col-form-label">Crisis Type</label>
             <div class="col-sm-10">
-              <select id="inputType" class="form-control">
+              <select  name= "crisisType" id="inputType" class="form-control">
                 <option selected>Choose...</option>
                 <option>Earthquake</option>
                 <option>Wildfire</option>

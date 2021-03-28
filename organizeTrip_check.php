@@ -9,49 +9,37 @@ try
   $dbh = new PDO($dsn, $db_user, $db_password);
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  $name = $_POST['name'];
-  $phone = $_POST['phone'];
-  $position = $_POST['position'];
-  $dateJoin = date ('Y-m-d', strtotime($_POST['date']));
+  $tripID = $_POST['tripID'];
+  $description = $_POST['description'];
+  $tripDate = date ('Y-m-d', strtotime($_POST['tripDate']));
+  $location = $_POST['location'];
+  $numVolunteer = $_POST['numVolunteer'];
+  $crisisType = $_POST['crisisType'];
 
-  $username = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
-  $password = htmlspecialchars($password, ENT_QUOTES, 'UTF-8');
-  $name = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
-  $phone = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
 
-  $position = htmlspecialchars($position, ENT_QUOTES, 'UTF-8');
-  $dateJoin = htmlspecialchars($dateJoin, ENT_QUOTES, 'UTF-8');
+  $tripID = htmlspecialchars($tripID, ENT_QUOTES, 'UTF-8');
+  $description = htmlspecialchars($description, ENT_QUOTES, 'UTF-8');
+  $tripDate = htmlspecialchars($tripDate, ENT_QUOTES, 'UTF-8');
+  $location = htmlspecialchars($location, ENT_QUOTES, 'UTF-8');
 
-  $sql_checkusername = 'SELECT username FROM tb_staffs WHERE username=?';
-  $prepare = $dbh->prepare($sql_checkusername);
-  $prepare->bindValue(1, $username, PDO::PARAM_STR);
+  $numVolunteer = htmlspecialchars($numVolunteer, ENT_QUOTES, 'UTF-8');
+  $crisisType = htmlspecialchars($crisisType, ENT_QUOTES, 'UTF-8');
+
+  $sql_profile = 'INSERT INTO tb_trips(tripID, description, tripDate, location, numVolunteer, crisisType) VALUES(?, ?, ?, ?, ?, ?)';
+  $prepare = $dbh->prepare($sql_profile);
+  $prepare->bindValue(1, $tripID, PDO::PARAM_STR);
+  $prepare->bindValue(2, $description, PDO::PARAM_STR);
+  $prepare->bindValue(3, $tripDate, PDO::PARAM_STR);
+  $prepare->bindValue(4, $location, PDO::PARAM_STR);
+  $prepare->bindValue(5, $numVolunteer, PDO::PARAM_STR);
+  $prepare->bindValue(6, $crisisType, PDO::PARAM_STR);
   $prepare->execute();
 
-  $result = $prepare->fetch(PDO::FETCH_ASSOC);
+  $dbh = null;
 
-  if($result==false)
-  {
-    $sql_profile = 'INSERT INTO tb_staffs(username, password, name, phone, position, dateJoin) VALUES(?, ?, ?, ?, ?, ?)';
-    $prepare = $dbh->prepare($sql_profile);
-    $prepare->bindValue(1, $username, PDO::PARAM_STR);
-    $prepare->bindValue(2, $password, PDO::PARAM_STR);
-    $prepare->bindValue(3, $name, PDO::PARAM_STR);
-    $prepare->bindValue(4, $phone, PDO::PARAM_STR);
-    $prepare->bindValue(5, $position, PDO::PARAM_STR);
-    $prepare->bindValue(6, $dateJoin, PDO::PARAM_STR);
-    $prepare->execute();
-
-    $dbh = null;
-
-    echo '<script>alert("Record staff successfully");window.location = "managerMenu.php";</script>';
+    echo '<script>alert("Organize Trip successfully");window.location = "staffMenu.php";</script>';
     exit();
-  }
-  else
-  {
-    echo '<script>alert("This Username is already used");window.location = "recordStaff.php";</script>';
-  }
+
 }
 catch (Exception $e)
 {
