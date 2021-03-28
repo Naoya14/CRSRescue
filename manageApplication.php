@@ -98,7 +98,7 @@ $bdh = null;
               <th scope="col">applicationID</th>
               <th scope="col">Application Date</th>
               <th scope="col">Status</th>
-
+                <td><input type=”text” name=”status” placeholder=”input the status”/></td>
 
               <th scope="col">Remark</th>
             </tr>
@@ -111,7 +111,7 @@ $bdh = null;
               <td><?php echo $trip['status']; ?></td>
               <td><?php echo $trip['remark']; ?></td>
               <td>
-              <button class="btn btn-outline-primary btn-sm" onclick="location.href='apply_trip_check.php?id=<?=$trip['tripID'];?>&username=<?=$trip['username'];?>'">Apply</button>
+
 
               </td>
               <td>
