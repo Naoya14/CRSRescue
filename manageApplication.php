@@ -104,11 +104,11 @@ $bdh = null;
             </tr>
           </thead>
           <tbody>
-            <?php foreach($result as $trip): ?>
+            <?php foreach($result as $application): ?>
             <tr>
-              <td><?php echo $trip['applicationID']; ?></td>
-              <td><?php echo $trip['applicationDate']; ?></td>
-              <td><?php echo $trip['status']; ?></td>
+              <td><?php echo $application['applicationID']; ?></td>
+              <td><?php echo $application['applicationDate']; ?></td>
+              <td><?php echo $application['status']; ?></td>
               <td>
                 <div class="col-sm-10">
                 <select  name= "status" id="inputStatus" class="form-control">
@@ -128,11 +128,11 @@ $bdh = null;
               <td>
               <div class="form-group row">
                 <div class="col-sm-10">
-                <button class="btn btn-success mt-3" type="submit">Updated</button>
+                <button class="btn btn-success mt-3" type="submit" onclick="location.href='manageApplication_check.php?id=<?=$trip['tripID'];?>&username=<?=$trip['username'];?>'">>Updated</button>
                 </div>
               </div>
               </td>
-              <td><?php echo $trip['remark']; ?></td>
+              <td><?php echo $application['remark']; ?></td>
 
 
             </tr>
