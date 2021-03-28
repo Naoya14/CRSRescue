@@ -21,8 +21,7 @@ $result = $prepare->fetchAll(PDO::FETCH_ASSOC);
 
 $bdh = null;
 
-?>
-?>
+/?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -128,7 +127,7 @@ $bdh = null;
               <td>
               <div class="form-group row">
                 <div class="col-sm-10">
-                <button class="btn btn-success mt-3" type="submit" onclick="location.href='manageApplication_check.php?id=<?=$application['applicationID'];?>&status=<?=$application['status'];?>&remark=<?=$application['remark'];?>">>Updated</button>
+                <button class="btn btn-success mt-3" type="submit" onclick="location.href='manageApplication_check.php?id=<?=$application['applicationID'];?>&status=<?=$application['status'];?>&remark=<?=$application['remark'];?>">Updated</button>
                 </div>
               </div>
               </td>
