@@ -6,6 +6,22 @@ if(isset($_SESSION['s_login']) == false)
   echo '<script>alert("You have not login yet");window.location = "index.php";</script>';
   exit();
 }
+
+$dsn = 'mysql:dbname=crsrescue_db;host=localhost;charset=utf8';
+$db_user = "root";
+$db_password = "";
+
+$dbh = new PDO($dsn, $db_user, $db_password);
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$sql = 'SELECT * FROM tb_applications';
+$prepare = $dbh->prepare($sql);
+$prepare->execute();
+$result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+
+$bdh = null;
+
+?>
 ?>
 
 <!DOCTYPE html>
@@ -73,31 +89,48 @@ if(isset($_SESSION['s_login']) == false)
         </div>
       </nav>
 
-      
-            <label for="inputStatus" class="col-sm-2 col-form-label">Status</label>
-            <div class="col-sm-10">
-              <select id="inputType" class="form-control">
-                <option selected>Choose...</option>
-                <option>Accepted</option>
-                <option>Rejected</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputRemarks" class="col-sm-2 col-form-label">Remarks</label>
-            <div class="col-sm-10">
-              <input type="text" name="remarks" class="form-control" id="inputRemarks" placeholder="remarks">
-            </div>
-          </div>
-          <div class="form-group row">
-            <div class="col-sm-10">
-              <button class="btn btn-success mt-3" type="submit">Submit</button>
-            </div>
-          </div>
-        </form>
+      <div class="container-fluid">
+        <h3 class="m-4">Manage Application</h3>
+        <div class="container">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">applicationID</th>
+              <th scope="col">Application Date</th>
+              <th scope="col">Status</th>
+              <th scope="col">Remark</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach($result as $trip): ?>
+            <tr>
+              <td><?php echo $trip['applicationID']; ?></td>
+              <td><?php echo $trip['application Date']; ?></td>
+              <td><?php echo $trip['status']; ?></td>
+              <td><?php echo $trip['remark']; ?></td>
+              <td>
+                <div class="dropdown">
+                 <button class="btn btn-sucess dropdown-toggle" type="button" data-toggle="dropdown">Status
+                 <span class="caret"></span></button>
+                 <ul class="status">
+                   <li><a href="#">Accepted</a></li>
+                   <li><a href="#">Rejected</a></li>
+                   <li><a href="#">JavaScript</a></li>
+                 </ul>
+               </div>
+              </td>
+              <td>
+
+            </tr>
+
+            <?php endforeach; ?>
+          </tbody>
+        </table>
+        </div>
       </div>
-    </div>
-  </div>
+      </div>
+      </div>
+
 
   <!-- Bootstrap core JS-->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
