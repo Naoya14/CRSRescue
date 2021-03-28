@@ -11,7 +11,7 @@ try
 
   $tripID = $_POST['tripID'];
   $description = $_POST['description'];
-  $tripDate = date ('Y-m-d', strtotime($_POST['tripDate']));
+  $tripDate = date ('Y-m-d', strtotime($_POST['date']));
   $location = $_POST['location'];
   $numVolunteers = $_POST['numVolunteers'];
   $crisisType = $_POST['crisisType'];

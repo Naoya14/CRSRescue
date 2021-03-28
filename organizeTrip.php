@@ -86,7 +86,7 @@ if(isset($_SESSION['s_login']) == false)
           <div class="form-group row">
              <label class="col-sm-2 col-form-label" for="date">Trip Date</label>
              <div class="col-sm-10">
-              <input class="form-control" id="tripDate" name="tripDate" placeholder="MM/DD/YYY" type="text"/>
+              <input class="form-control" id="tripDate" name="date" placeholder="MM/DD/YYY" type="text"/>
             </div>
           </div>
           <div class="form-group row">
