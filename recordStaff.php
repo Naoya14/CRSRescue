@@ -86,7 +86,7 @@ if(isset($_SESSION['m_login']) == false)
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
-              <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" pattern=".{}|.{8,}">
+              <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" pattern=".{}|.{8,}" required title="minimum 8 characters">>
             </div>
           </div>
           <div class="form-group row">
@@ -98,7 +98,7 @@ if(isset($_SESSION['m_login']) == false)
           <div class="form-group row">
             <label for="inputPhone" class="col-sm-2 col-form-label">Phone</label>
             <div class="col-sm-10">
-              <input type="text" name="phone" class="form-control" id="inputPhone" placeholder="Phone" pattern=".{} | ^\d{3}-\d{3}-\d{4}$">
+              <input type="text" name="phone" class="form-control" id="inputPhone" placeholder="Phone" pattern=".{} | ^\d{3}-\d{3}-\d{4}$"  required title="111-222-3333">
             </div>
           </div>
 
