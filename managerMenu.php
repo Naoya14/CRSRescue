@@ -74,7 +74,7 @@ if(isset($_SESSION['m_login']) == false)
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Welcome to CRS-Rescue</h1>
+        <h1 class="mt-4">Welcome to CRS-Rescue Manager Menu</h1>
         <br>
         <p></p>
 
