@@ -105,7 +105,7 @@ $bdh = null;
             <?php foreach($result as $trip): ?>
             <tr>
               <td><?php echo $trip['applicationID']; ?></td>
-              <td><?php echo $trip['application Date']; ?></td>
+              <td><?php echo $trip['applicationDate']; ?></td>
               <td><?php echo $trip['status']; ?></td>
               <td><?php echo $trip['remark']; ?></td>
               <td>
