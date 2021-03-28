@@ -107,6 +107,14 @@ $bdh = null;
               <td><?php echo $trip['applicationID']; ?></td>
               <td><?php echo $trip['applicationDate']; ?></td>
               <td><?php echo $trip['status']; ?></td>
+              <td>
+                <div class="col-sm-10">
+                <select  name= "status" id="inputStatus" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Accepted</option>
+                  <option>Rejected</option>
+                </select>
+              </div></td>
               <td><?php echo $trip['remark']; ?></td>
             </tr>
 
