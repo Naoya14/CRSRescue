@@ -14,10 +14,20 @@ $db_password = "";
 $dbh = new PDO($dsn, $db_user, $db_password);
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$sql = 'SELECT * FROM tb_trips';
-$prepare = $dbh->prepare($sql);
+$sql_new = 'SELECT * FROM tb_applications JOIN tb_trips ON tb_applications.tripID = tb_trips.tripID WHERE status="New"';
+$prepare = $dbh->prepare($sql_new);
 $prepare->execute();
-$result = $prepare->fetchAll(PDO::FETCH_ASSOC);
+$result1 = $prepare->fetchAll(PDO::FETCH_ASSOC);
+
+$sql_accepted = 'SELECT * FROM tb_applications JOIN tb_trips ON tb_applications.tripID = tb_trips.tripID WHERE status="Accepted"';
+$prepare = $dbh->prepare($sql_accepted);
+$prepare->execute();
+$result2 = $prepare->fetchAll(PDO::FETCH_ASSOC);
+
+$sql_rejected = 'SELECT * FROM tb_applications JOIN tb_trips ON tb_applications.tripID = tb_trips.tripID WHERE status="Rejected"';
+$prepare = $dbh->prepare($sql_rejected);
+$prepare->execute();
+$result3 = $prepare->fetchAll(PDO::FETCH_ASSOC);
 
 $bdh = null;
 
@@ -90,36 +100,87 @@ $bdh = null;
       </nav>
 
       <div class="container-fluid">
-        <h3 class="m-4">Apply Trip</h3>
+        <h3 class="m-4">Application Status</h3>
         <div class="container">
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Description</th>
-              <th scope="col">Trip Date</th>
-              <th scope="col">Location</th>
-              <th scope="col">Number</th>
-              <th scope="col">Crisis Type</th>
-              <th scope="col">Form</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php foreach($result as $trip): ?>
-            <tr>
-              <td><?php echo $trip['tripID']; ?></td>
-              <td><?php echo $trip['description']; ?></td>
-              <td><?php echo $trip['tripDate']; ?></td>
-              <td><?php echo $trip['location']; ?></td>
-              <td><?php echo $trip['numVolunteers']; ?></td>
-              <td><?php echo $trip['crisisType']; ?></td>
-              <td>
-                <button class="btn btn-outline-primary btn-sm" onclick="location.href='apply_trip_check.php?id=<?=$trip['tripID'];?>&username=<?=$trip['username'];?>'">Apply</button>
-              </td>
-            </tr>
-            <?php endforeach; ?>
-          </tbody>
-        </table>
+
+          <h5>Processing</h5>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Date</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+                <th scope="col">Remark</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach($result1 as $application): ?>
+              <tr>
+                <td><?php echo $application['applicationID']; ?></td>
+                <td><?php echo $application['tripDate']; ?></td>
+                <td><?php echo $application['description']; ?></td>
+                <td><?php echo $application['status']; ?></td>
+                <td><?php echo $application['remark']; ?></td>
+                <td>
+                  <button class="btn btn-outline-danger btn-sm" onclick="location.href='application_delete_check.php?id=<?=$application['applicationID'];?>'">Delete</button>
+                </td>
+              </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>
+
+          <br>
+          <h5>Accepted</h5>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Date</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+                <th scope="col">Remark</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach($result2 as $application): ?>
+              <tr>
+                <td><?php echo $application['applicationID']; ?></td>
+                <td><?php echo $application['tripDate']; ?></td>
+                <td><?php echo $application['description']; ?></td>
+                <td><?php echo $application['status']; ?></td>
+                <td><?php echo $application['remark']; ?></td>
+              </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>
+
+          <br>
+
+          <h5>Rejected</h5>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Date</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+                <th scope="col">Remark</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach($result3 as $application): ?>
+              <tr>
+                <td><?php echo $application['applicationID']; ?></td>
+                <td><?php echo $application['tripDate']; ?></td>
+                <td><?php echo $application['description']; ?></td>
+                <td><?php echo $application['status']; ?></td>
+                <td><?php echo $application['remark']; ?></td>
+              </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
