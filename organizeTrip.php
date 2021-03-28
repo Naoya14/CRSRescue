@@ -79,13 +79,15 @@ if(isset($_SESSION['s_login']) == false)
           <div class="form-group row">
             <label for="inputtripID" class="col-sm-2 col-form-label">TripID</label>
             <div class="col-sm-10">
-              <input type="text" name="tripID" class="form-control" id="inputtripID" placeholder="tripID">
+              <input type="text" name="tripID" class="form-control" id="inputtripID" placeholder="tripID" required
+                autofocus>
             </div>
           </div>
           <div class="form-group row">
             <label for="inputDescription" class="col-sm-2 col-form-label">Description</label>
             <div class="col-sm-10">
-              <input type="description" name="description" class="form-control" id="inputDescription" placeholder="description">
+              <input type="description" name="description" class="form-control" id="inputDescription" placeholder="description" required
+                autofocus>
             </div>
           </div>
           <div class="form-group row">
@@ -97,13 +99,15 @@ if(isset($_SESSION['s_login']) == false)
           <div class="form-group row">
             <label for="inputLocation" class="col-sm-2 col-form-label">Location</label>
             <div class="col-sm-10">
-              <input type="text" name="location" class="form-control" id="inputLocation" placeholder="location">
+              <input type="text" name="location" class="form-control" id="inputLocation" placeholder="location" required
+                autofocus>
             </div>
           </div>
           <div class="form-group row">
             <label for="inputnumOfVolunteer" class="col-sm-2 col-form-label">Number of Volunteer</label>
             <div class="col-sm-10">
-              <input type="text" name="numofVolunteer" class="form-control" id="inputnumOfVolunteer" placeholder="numofVolunteer">
+              <input type="text" name="numofVolunteer" class="form-control" id="inputnumOfVolunteer" placeholder="numofVolunteer" required
+                autofocus>
             </div>
           </div>
           <div class="form-group row">
