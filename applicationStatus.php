@@ -14,18 +14,21 @@ $db_password = "";
 $dbh = new PDO($dsn, $db_user, $db_password);
 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$sql_new = 'SELECT * FROM tb_applications JOIN tb_trips ON tb_applications.tripID = tb_trips.tripID WHERE status="New"';
+$sql_new = 'SELECT * FROM tb_applications JOIN tb_trips ON tb_applications.tripID = tb_trips.tripID WHERE status="New" AND username_volunteer=?';
 $prepare = $dbh->prepare($sql_new);
+$prepare->bindValue(1, $_SESSION['username'], PDO::PARAM_STR);
 $prepare->execute();
 $result1 = $prepare->fetchAll(PDO::FETCH_ASSOC);
 
-$sql_accepted = 'SELECT * FROM tb_applications JOIN tb_trips ON tb_applications.tripID = tb_trips.tripID WHERE status="Accepted"';
+$sql_accepted = 'SELECT * FROM tb_applications JOIN tb_trips ON tb_applications.tripID = tb_trips.tripID WHERE status="Accepted" AND username_volunteer=?';
 $prepare = $dbh->prepare($sql_accepted);
+$prepare->bindValue(1, $_SESSION['username'], PDO::PARAM_STR);
 $prepare->execute();
 $result2 = $prepare->fetchAll(PDO::FETCH_ASSOC);
 
-$sql_rejected = 'SELECT * FROM tb_applications JOIN tb_trips ON tb_applications.tripID = tb_trips.tripID WHERE status="Rejected"';
+$sql_rejected = 'SELECT * FROM tb_applications JOIN tb_trips ON tb_applications.tripID = tb_trips.tripID WHERE status="Rejected" AND username_volunteer=?';
 $prepare = $dbh->prepare($sql_rejected);
+$prepare->bindValue(1, $_SESSION['username'], PDO::PARAM_STR);
 $prepare->execute();
 $result3 = $prepare->fetchAll(PDO::FETCH_ASSOC);
 
