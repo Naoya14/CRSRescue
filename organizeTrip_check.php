@@ -14,7 +14,7 @@ try
   $location = $_POST['location'];
   $numVolunteers = $_POST['numVolunteers'];
   $crisisType = $_POST['crisisType'];
-
+  $username = $_POST['username'];
 
   $description = htmlspecialchars($description, ENT_QUOTES, 'UTF-8');
   $tripDate = htmlspecialchars($tripDate, ENT_QUOTES, 'UTF-8');
@@ -22,8 +22,9 @@ try
 
   $numVolunteers = htmlspecialchars($numVolunteers, ENT_QUOTES, 'UTF-8');
   $crisisType = htmlspecialchars($crisisType, ENT_QUOTES, 'UTF-8');
+  $username = htmlspecialchars($username, ENT_QUOTES, 'UTF-8');
 
-  $sql_profile = 'INSERT INTO tb_trips(description, tripDate, location, numVolunteers, crisisType) VALUES( ?, ?, ?, ?, ?)';
+  $sql_profile = 'INSERT INTO tb_trips(description, tripDate, location, numVolunteers, crisisType, username) VALUES( ?, ?, ?, ?, ?,?)';
   $prepare = $dbh->prepare($sql_profile);
 
   $prepare->bindValue(1, $description, PDO::PARAM_STR);
@@ -31,6 +32,7 @@ try
   $prepare->bindValue(3, $location, PDO::PARAM_STR);
   $prepare->bindValue(4, $numVolunteers, PDO::PARAM_STR);
   $prepare->bindValue(5, $crisisType, PDO::PARAM_STR);
+  $prepare->bindValue(5, $_SESSION['username'], PDO::PARAM_STR);
   $prepare->execute();
 
   $dbh = null;

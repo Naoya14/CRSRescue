@@ -11,17 +11,20 @@ try
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   $applicationID = $_GET['applicationID'];
+  $applicationDate = $_GET['applicationDate'];
   $status = $_GET['status'];
   $remark = $_GET['remark'];
 
   $applicationID = htmlspecialchars($applicationID, ENT_QUOTES, 'UTF-8');
+  $applicationDate = htmlspecialchars($applicationDate, ENT_QUOTES, 'UTF-8');
   $status = htmlspecialchars($status, ENT_QUOTES, 'UTF-8');
   $remark = htmlspecialchars($remark, ENT_QUOTES, 'UTF-8');
 
-    $sql = 'INSERT INTO tb_applications( status,remark) VALUES (?, ?,)';
+    $sql = 'INSERT INTO tb_applications( applicationDate,status,remark) VALUES (?,?, ?,)';
     $prepare = $dbh->prepare($sql);
-    $prepare->bindValue(1, $status, PDO::PARAM_STR);
-    $prepare->bindValue(2, $remark, PDO::PARAM_STR);
+    $prepare->bindValue(1, $applicationDate, PDO::PARAM_STR);
+    $prepare->bindValue(2, $status, PDO::PARAM_STR);
+    $prepare->bindValue(3, $remark, PDO::PARAM_STR);
     $prepare->execute();
 
     $dbh = null;
