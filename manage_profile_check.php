@@ -39,6 +39,11 @@ try
   $prepare->bindValue(5, $_SESSION['username'], PDO::PARAM_STR);
   $prepare->execute();
 
+  $_SESSION['password'] = $password;
+  $_SESSION['name'] = $name;
+  $_SESSION['phone'] = $phone;
+  $_SESSION['country'] = $country;
+
   if(!(strcmp($type, "Choose") == 0))
   {
     if($image['size'] > 0)
