@@ -32,7 +32,7 @@ try
   $prepare->bindValue(3, $location, PDO::PARAM_STR);
   $prepare->bindValue(4, $numVolunteers, PDO::PARAM_STR);
   $prepare->bindValue(5, $crisisType, PDO::PARAM_STR);
-  $prepare->bindValue(5, $_SESSION['username']
+  $prepare->bindValue(5, $_SESSION['username'], PDO::PARAM_STR);
   $prepare->execute();
 
   $dbh = null;
