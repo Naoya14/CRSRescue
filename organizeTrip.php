@@ -108,7 +108,9 @@ if(isset($_SESSION['s_login']) == false)
               <select  name= "crisisType" id="inputType" class="form-control">
                 <option selected>Choose...</option>
                 <option>Earthquake</option>
+                <option>Fllod</option>
                 <option>Wildfire</option>
+
               </select>
             </div>
           </div>
