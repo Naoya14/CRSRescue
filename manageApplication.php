@@ -91,55 +91,63 @@ $bdh = null;
       <div class="container-fluid">
         <h3 class="m-4">Manage Application</h3>
         <div class="container">
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">applicationID</th>
-              <th scope="col">Application Date</th>
-              <th scope="col">Status</th>
-              <th scope="col">New Status</th>
-              <th scope="col">Remark</th>
-              <<th scope="col">Updated</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php foreach($result as $application): ?>
-            <tr>
-              <td><?php echo $application['applicationID']; ?></td>
-              <td><?php echo $application['applicationDate']; ?></td>
-              <td><?php echo $application['status']; ?></td>
-              <td>
-                <div class="col-sm-10">
-                <select name= "status" id="inputStatus" class="form-control">
-                  <option selected>Status</option>
-                  <option>Accepted</option>
-                  <option>Rejected</option>
-                </select>
-              </div>
-              </td>
-              <td>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">applicationID</th>
+                <th scope="col">Application Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Remark</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php foreach($result as $application): ?>
+              <tr>
+                <td><?php echo $application['applicationID']; ?></td>
+                <td><?php echo $application['applicationDate']; ?></td>
+                <td><?php echo $application['status']; ?></td>
+                <td><?php echo $application['remark']; ?></td>
+              </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>
+
+
+            <form method="POST" action="manageApplication_check.php" class="m-3">
+            <h3 class="mt-4 mb-4">Update Status and remark</h3>
               <div class="form-group row">
-                  <div class="col-sm-10">
-                    <input type="text" name="remark" class="form-control" id="inputRemark" placeholder="remark">
-                  </div>
-              </div>
-              </td>
-              <td>
-              <div class="form-group row">
+                <label for="inputID" class="col-sm-2 col-form-label">ApplicationID</label>
                 <div class="col-sm-10">
-                <button class="btn btn-success mt-3" type="submit"
-                onclick="location.href='manageApplication_check.php?id=<?=$application['applicationID'];?>
-                &status=<?=$application['status'];?>&remark=<?=$application['remark'];?>'">Updated</button>
+                  <input type="number" name="ID" class="form-control" id="inputID" required>
                 </div>
               </div>
-              </td>
-            </tr>
-            <?php endforeach; ?>
-          </tbody>
+              <div class="form-group row">
+                <label for="inputStatus" class="col-sm-2 col-form-label">Status</label>
+                <div class="col-sm-10">
+                  <select id="inputStatus" class="form-control" name="status">
+                    <option selected>Choose</option>
+                    <option>Accepted</option>
+                    <option>Rejected</option>
+                  </select>
+                 </div>
+              </div>
+              <div class="form-group row">
+                <label for="inputRemark" class="col-sm-2 col-form-label">Remark</label>
+                <div class="col-sm-10">
+                  <input type="text" name="remark" class="form-control" id="inputRemark" required>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-10">
+                  <button class="btn btn-success mt-3" type="submit">Update</button>
+                </div>
+              </div>
+            </form>    
+          </div>
         </div>
       </div>
       </div>
-      </div>
+    </div>
 
 
   <!-- Bootstrap core JS-->
