@@ -20,11 +20,13 @@ try
   $status = htmlspecialchars($status, ENT_QUOTES, 'UTF-8');
   $remark = htmlspecialchars($remark, ENT_QUOTES, 'UTF-8');
 
-    $sql = 'INSERT INTO tb_applications( applicationDate,status,remark) VALUES (?,?, ?,)';
+    $sql = 'INSERT INTO tb_applications( applicationID,applicationDate,status,remark) VALUES (?,?,?, ?)';
     $prepare = $dbh->prepare($sql);
-    $prepare->bindValue(1, $applicationDate, PDO::PARAM_STR);
-    $prepare->bindValue(2, $status, PDO::PARAM_STR);
-    $prepare->bindValue(3, $remark, PDO::PARAM_STR);
+
+    $prepare->bindValue(1, $applicationID, PDO::PARAM_STR);
+    $prepare->bindValue(2, $applicationDate, PDO::PARAM_STR);
+    $prepare->bindValue(3, $status, PDO::PARAM_STR);
+    $prepare->bindValue(4, $remark, PDO::PARAM_STR);
     $prepare->execute();
 
     $dbh = null;
