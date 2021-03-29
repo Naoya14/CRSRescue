@@ -17,6 +17,7 @@ try
   $type = $_POST['type'];
   $date = date ('Y-m-d', strtotime($_POST['date']));
   $image = $_FILES['image'];
+  $today = date("Y/m/d");
 
   $name = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
   $password = htmlspecialchars($password, ENT_QUOTES, 'UTF-8');
@@ -41,21 +42,32 @@ try
     {
       if($image['size'] > 10000000)
       {
-        echo '<script>alert("The image is too big, so can not upload");window.location = "volunteerMenu.php";</script>';
+        echo '<script>alert("The image is too big, so can not upload");window.location = "manageProfile.php";</script>';
       }
       else
       {
-        move_uploaded_file($image['tmp_name'], './assets/img/'.$image['name']);
-        $sql_profile = 'INSERT INTO tb_documents(documentType, expiryDate, image, username) VALUES(?, ?, ?, ?)';
-        $prepare = $dbh->prepare($sql_profile);
-        $prepare->bindValue(1, $type, PDO::PARAM_STR);
-        $prepare->bindValue(2, $date, PDO::PARAM_STR);
-        $prepare->bindValue(3, $image['name'], PDO::PARAM_STR);
-        $prepare->bindValue(4, $_SESSION['username'], PDO::PARAM_STR);
-        $prepare->execute();
-
-        echo '<script>alert("Update your profile and the document successfully");window.location = "volunteerMenu.php";</script>';
+        if($date < $today)
+        {
+          echo '<script>alert("Your document is expired already");window.location = "manageProfile.php";</script>';
+        }
+        else
+        {
+          move_uploaded_file($image['tmp_name'], './assets/img/'.$image['name']);
+          $sql_profile = 'INSERT INTO tb_documents(documentType, expiryDate, image, username) VALUES(?, ?, ?, ?)';
+          $prepare = $dbh->prepare($sql_profile);
+          $prepare->bindValue(1, $type, PDO::PARAM_STR);
+          $prepare->bindValue(2, $date, PDO::PARAM_STR);
+          $prepare->bindValue(3, $image['name'], PDO::PARAM_STR);
+          $prepare->bindValue(4, $_SESSION['username'], PDO::PARAM_STR);
+          $prepare->execute();
+  
+          echo '<script>alert("Update your profile and the document successfully");window.location = "manageProfile.php";</script>';
+        }
       }
+    }
+    else
+    {
+      echo '<script>alert("You need to add image to update documents");window.location = "manageProfile.php";</script>';
     }
   }
   else
