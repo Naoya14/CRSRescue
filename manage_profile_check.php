@@ -19,6 +19,9 @@ try
   $image = $_FILES['image'];
   $today = date("Y/m/d");
 
+  $date1 = new DateTime($date);
+  $date2 = new DateTime($today);
+
   $name = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
   $password = htmlspecialchars($password, ENT_QUOTES, 'UTF-8');
   $phone = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
@@ -46,7 +49,7 @@ try
       }
       else
       {
-        if($date < $today)
+        if($date1 < $date2)
         {
           echo '<script>alert("Your document is expired already");window.location = "manageProfile.php";</script>';
         }
