@@ -6,6 +6,24 @@ if(isset($_SESSION['v_login']) == false)
   echo '<script>alert("You have not login yet");window.location = "index.php";</script>';
   exit();
 }
+
+$dsn = 'mysql:dbname=crsrescue_db;host=localhost;charset=utf8';
+$db_user = "root";
+$db_password = "";
+
+$dbh = new PDO($dsn, $db_user, $db_password);
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$sql = 'SELECT documentType, expiryDate, image FROM tb_documents WHERE username=?';
+$prepare = $dbh->prepare($sql);
+$prepare->bindValue(1, $_SESSION['username'], PDO::PARAM_STR);
+$prepare->execute();
+$result = $prepare->fetch(PDO::FETCH_ASSOC);
+
+$bdh = null;
+$img_name = $result['image'];
+$disp_img = '<img src="./assets/img/'.$img_name.'" style="width: 300px;">';
+
 ?>
 
 <!DOCTYPE html>
@@ -75,67 +93,16 @@ if(isset($_SESSION['v_login']) == false)
       </nav>
 
       <div class="container-fluid">
-        <form method="POST" action="manage_profile_check.php" class="m-3" enctype="multipart/form-data">
-        <h3 class="mt-4 mb-4">Manage profile</h3>
-          <div class="form-group row">
-            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-            <div class="col-sm-10">
-              <input type="text" name="name" class="form-control" id="inputName" value="<?php print $_SESSION['name'] ?>" required>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-10">
-              <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" pattern=".{8,}" required title="minimum 8 characters">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputPhone" class="col-sm-2 col-form-label">Phone</label>
-            <div class="col-sm-10">
-              <input type="text" name="phone" class="form-control" id="inputPhone" placeholder="Phone" pattern="^\d{3}-\d{3}-\d{4}$" required title="111-222-3333" value="<?php print $_SESSION['phone'] ?>">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputCountry" class="col-sm-2 col-form-label">Country</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" name="country" id="inputCountry" placeholder="Country" required value="<?php print $_SESSION['country']?>">
-            </div>
-          </div>
+        <div class="container">
+        
+          <?php print $result['documentType']; ?>
           <br>
-          <h3>Upload Documents</h3>
+          <?php print $result['expiryDate']; ?> 
           <br>
-          <div class="form-group row">
-            <label for="inputType" class="col-sm-2 col-form-label">Document Type</label>
-            <div class="col-sm-10">
-              <select id="inputType" class="form-control" name="type" value="">
-                <option selected>Choose</option>
-                <option>PASSPORT</option>
-                <option>CERTIFICATE</option>
-                <option>VISA</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group row">
-             <label class="col-sm-2 col-form-label" for="date">Date</label>
-             <div class="col-sm-10">
-              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="form-control-file" class="col-sm-2 col-form-label">Choose image</label>
-            <div class="col-sm-10">
-              <div class="form-group">
-                <input type="file" class="form-control-file" name="image" id="exampleFormControlFile1">
-              </div>
-            </div>
-          </div>
-          <div class="form-group row">
-            <div class="col-sm-10">
-              <button class="btn btn-primary mt-3" type="submit">Update</button>
-            </div>
-          </div>
-          <a href="viewDocuments.php">View Documents</a>
-        </form>
+          <?php print $disp_img; ?>
+          <br>
+          <a href="manageProfile.php">Back</a>
+        </div>
       </div>
     </div>
   </div>
