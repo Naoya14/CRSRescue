@@ -89,7 +89,7 @@ $bdh = null;
       </nav>
 
       <div class="container-fluid">
-        <h3 class="m-4">Manage Application/h3>
+        <h3 class="m-4">Manage Application</h3>
         <div class="container">
         <table class="table">
           <thead class="thead-dark">
