@@ -16,7 +16,7 @@ if(isset($_SESSION['s_login']) == false)
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Manager Menu</title>
+  <title>Admin Menu</title>
   <!-- Favicon-->
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
 
