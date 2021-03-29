@@ -131,7 +131,7 @@ $bdh = null;
                 </div>
               </div>
               </td>
-              <td><?php echo $application['remark']; ?></td>
+          
 
 
             </tr>
