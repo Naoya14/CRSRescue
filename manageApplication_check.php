@@ -10,8 +10,8 @@ try
   $dbh = new PDO($dsn, $db_user, $db_password);
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  $applicationID = $_GET['applicationID'];
-  $applicationDate = $_GET['applicationDate'];
+  $applicationID = $_SESSION['applicationID'];
+  $applicationDate = $_SESSION['applicationDate'];
   $status = $_GET['status'];
   $remark = $_GET['remark'];
 

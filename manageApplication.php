@@ -89,7 +89,7 @@ $bdh = null;
       </nav>
 
       <div class="container-fluid">
-        <h3 class="m-4">Manage Application</h3>
+        <h3 class="m-4">Manage Application/h3>
         <div class="container">
         <table class="table">
           <thead class="thead-dark">
@@ -127,7 +127,7 @@ $bdh = null;
               <td>
               <div class="form-group row">
                 <div class="col-sm-10">
-                <button class="btn btn-success mt-3" type="submit" 
+                <button class="btn btn-success mt-3" type="submit"
                 onclick="location.href='manageApplication_check.php?id=<?=$application['applicationID'];?>
                 &status=<?=$application['status'];?>&remark=<?=$application['remark'];?>'">Updated</button>
                 </div>
