@@ -20,7 +20,7 @@ try
   $status = htmlspecialchars($status, ENT_QUOTES, 'UTF-8');
   $remark = htmlspecialchars($remark, ENT_QUOTES, 'UTF-8');
 
-    $sql = 'INSERT INTO tb_applications( applicationID,applicationDate,status,remark) VALUES (?,?,?, ?)';
+    $sql = 'UPDATE INTO tb_applications( applicationID,applicationDate,status,remark) VALUES (?,?,?, ?)';
     $prepare = $dbh->prepare($sql);
 
     $prepare->bindValue(1, $applicationID, PDO::PARAM_STR);
